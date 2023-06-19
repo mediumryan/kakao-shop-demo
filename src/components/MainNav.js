@@ -8,8 +8,8 @@ import {
   NavTitle,
   NavMenu,
   NavOthers,
-  NavToggleBtn,
-} from "../styled/StyledNavbar";
+} from "../styled/styled-navbar/StyledNavbar";
+import { NavToggleBtn } from "../styled/styled-navbar/StyledNavToggle";
 
 const MainNav = () => {
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ const MainNav = () => {
         </li>
         <li
           onClick={() => {
-            navigate("/signin");
+            navigate("/sign-in");
           }}
         >
           👤

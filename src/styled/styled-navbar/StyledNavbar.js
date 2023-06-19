@@ -28,8 +28,6 @@ export const NavTitle = styled.div`
   }
 `;
 
-const NavLists = styled.li``;
-
 export const NavMenu = styled.ul`
   display: ${(props) => (props.show ? "flex" : "none")};
   margin: 0 2rem;
@@ -75,19 +73,5 @@ export const NavOthers = styled.ul`
   }
   @media screen and (max-width: 413px) {
     margin: 12px auto;
-  }
-`;
-
-export const NavToggleBtn = styled.button`
-  display: none;
-  position: absolute;
-  right: 24px;
-  top: 42px;
-  border: none;
-  background: none;
-  outline: none;
-  font-size: 24px;
-  @media screen and (max-width: 413px) {
-    display: block;
   }
 `;
