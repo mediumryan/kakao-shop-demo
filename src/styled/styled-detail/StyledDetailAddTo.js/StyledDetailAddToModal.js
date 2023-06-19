@@ -16,6 +16,9 @@ export const DetailAddToModalContainer = styled.div`
   opacity: 0.9;
   * {
     margin-bottom: var(--margin-medium);
+    @media screen and (max-width: 413px) {
+      font-size: var(--font-size-medium-large);
+    }
   }
 `;
 

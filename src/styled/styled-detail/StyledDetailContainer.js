@@ -20,10 +20,14 @@ export const DetailModalContainer = styled.div`
     margin: var(--margin-small) auto;
     color: var(--color-1);
     text-align: center;
+    @media screen and (max-width: 413px) {
+      font-size: var(--font-size-medium-large);
+    }
   }
   @media screen and (max-width: 413px) {
     width: 85%;
-    height: 75%;
+    height: 55%;
+    justify-content: space-between;
   }
 `;
 
@@ -31,11 +35,16 @@ export const DetailOverview = styled.div`
   width: 100%;
   display: flex;
   flex-basis: 60%;
+  @media screen and (max-width: 413px) {
+    flex-basis: 50%;
+    margin-top: var(--margin-medium);
+  }
 `;
 
 export const DetailPreview = styled.div`
   width: 100%;
   display: flex;
+  flex-basis: 35%;
   justify-content: space-evenly;
   align-items: center;
 `;
@@ -78,6 +87,9 @@ export const DetailDescription = styled.div`
     &:hover {
       background-color: var(--color-1);
     }
+    @media screen and (max-width: 413px) {
+      font-size: var(--font-size-medium-large);
+    }
   }
 `;
 
@@ -109,5 +121,8 @@ export const DetailCloseButton = styled.button`
   transition: 600ms all;
   &:hover {
     transform: scale(1.05) rotate(360deg);
+  }
+  @media screen and (max-width: 413px) {
+    font-size: var(--font-size-medium);
   }
 `;
