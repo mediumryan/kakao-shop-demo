@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // 컴포넌트 불러오기
-import AddToModal from "./AddToModal";
 import DetailAddToModal from "./DetailAddToModal";
 // styled-components 불러오기
 import {
@@ -14,7 +13,11 @@ import {
 } from "../styled/styled-detail/StyledDetailContainer";
 
 const DetailModal = ({ item, detailModal, setDetailModal }) => {
-  const [detailImgArr] = useState(["1", "2", "3"]);
+  const [detailImgArr] = useState([
+    { id: "00", value: "0" },
+    { id: "01", value: "1" },
+    { id: "02", value: "2" },
+  ]);
 
   const [detailAddTo, setDetailAddTo] = useState(false);
 
@@ -28,7 +31,7 @@ const DetailModal = ({ item, detailModal, setDetailModal }) => {
       localStorage.setItem("cart", JSON.stringify([item]));
     } else {
       // 로컬스토리지에 상품 정보가 있다면 중복 확인
-      const found = parsedCart.findIndex((a) => a.id == item.id);
+      const found = parsedCart.findIndex((a) => a.id === item.id);
       // 중복값이 없다면 item 추가 후 저장
       if (found == -1) {
         parsedCart.push(item);
@@ -42,7 +45,7 @@ const DetailModal = ({ item, detailModal, setDetailModal }) => {
   }
 
   return (
-    <DetailModalContainer show={detailModal === true ? true : false}>
+    <DetailModalContainer show={detailModal ? true : false}>
       <DetailOverview>
         <DetailImgContainer>
           <img
@@ -63,7 +66,7 @@ const DetailModal = ({ item, detailModal, setDetailModal }) => {
       <DetailPreview>
         {detailImgArr.map((imgItem, imgIndex) => {
           return (
-            <PreviewItems>
+            <PreviewItems key={imgItem.id}>
               <img
                 src={item.image_path}
                 alt="상품 상세화면 미리보기 이미지 입니다."

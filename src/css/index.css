@@ -75,60 +75,6 @@ button {
 }
 
 /* 카트 */
-.cart-cards-container {
-  width: 100%;
-  max-height: 600px;
-  overflow: scroll;
-}
-
-.cart-cards-images-container {
-  position: relative;
-  width: 120px;
-  height: 120px;
-}
-
-.cart-selectAll {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  border-bottom: 5px solid var(--color-light-grey);
-}
-
-.selectAll-right {
-  border: none;
-  outline: none;
-  background: none;
-  color: var(--color-light-grey);
-  cursor: pointer;
-}
-
-.cart-bottom {
-  margin: 3rem 0;
-  padding: 1rem;
-  width: 100%;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.total-quantity {
-  margin-right: 2rem;
-}
-
-.buy-btn {
-  margin-left: auto;
-  border: none;
-  outline: none;
-  background: var(--color-1);
-  color: #fff;
-  font-size: 1.5rem;
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
 
 #cart-cards {
   width: 100%;

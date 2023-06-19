@@ -9,4 +9,7 @@ export const MainKakaoLogo = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 413px) {
+    display: none;
+  }
 `;

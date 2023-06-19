@@ -7,6 +7,7 @@ export const MainNavContainer = styled.nav`
   border-bottom: 2px solid var(--color-1);
   position: relative;
   @media screen and (max-width: 413px) {
+    border-bottom: none;
     flex-direction: column;
     padding: 0;
   }

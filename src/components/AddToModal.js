@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 // styled-components 불러오기
 import {
   AddToModalContainer,

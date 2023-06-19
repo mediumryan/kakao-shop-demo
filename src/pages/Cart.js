@@ -6,6 +6,15 @@ import {
   SectionContainer,
   SectionTitle,
 } from "../styled/common-section-style/SectionContainer";
+import {
+  CartCardsContainer,
+  CartSelectDelAll,
+  CartSelectAll,
+  CartDelBtn,
+  CartBottom,
+  CartQuantityPrice,
+  CartBuyBtn,
+} from "../styled/styled-cart/StyledCartContainer";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -61,20 +70,18 @@ const Cart = () => {
   return (
     <SectionContainer>
       <SectionTitle>장바구니</SectionTitle>
-      <div className="cart-selectAll">
-        <div className="selectAll-left">
+      <CartSelectDelAll>
+        <CartSelectAll>
           <input
             type="checkbox"
             onChange={onChangeCheckAll}
             onClick={handleCheckAll}
           />
           <span>전체 {checkedCart.length}</span>
-        </div>
-        <button className="selectAll-right" onClick={handleSelectDelBtn}>
-          선택삭제
-        </button>
-      </div>
-      <div className="cart-cards-container">
+        </CartSelectAll>
+        <CartDelBtn onClick={handleSelectDelBtn}>선택삭제</CartDelBtn>
+      </CartSelectDelAll>
+      <CartCardsContainer>
         {cart.map((item, index) => {
           return (
             <CartCards
@@ -82,18 +89,18 @@ const Cart = () => {
               index={index}
               cart={cart}
               setCart={setCart}
-              key={index}
+              key={item.id}
             />
           );
         })}
-      </div>
-      <div className="cart-bottom">
-        <div className="total-quantity">상품 수 : {totalQuantity}개</div>
-        <div className="total-price">
-          가격 : {totalPrice.toLocaleString()}원
-        </div>
-        <button className="buy-btn">결제하기</button>
-      </div>
+      </CartCardsContainer>
+      <CartBottom>
+        <CartQuantityPrice>
+          <span>상품 수 : {totalQuantity}개</span>
+          <span>가격 : {totalPrice.toLocaleString()}원</span>
+        </CartQuantityPrice>
+        <CartBuyBtn>결제하기</CartBuyBtn>
+      </CartBottom>
     </SectionContainer>
   );
 };
