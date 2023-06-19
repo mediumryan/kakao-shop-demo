@@ -5,6 +5,7 @@ export const SectionCardsContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: repeat(460px, auto);
   grid-gap: 24px;
+
   @media screen and (max-width: 413px) {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: repeat(180px, auto);
@@ -23,8 +24,8 @@ export const CardsImgContainer = styled.div`
   width: 240px;
   height: 240px;
   position: relative;
-  cursor: pointer;
   margin: 0 auto;
+  cursor: pointer;
   @media screen and (max-width: 413px) {
     width: 160px;
     height: 220px;
@@ -56,6 +57,7 @@ export const CardsDescription = styled.div`
     cursor: pointer;
     border-radius: 0 0 10px 10px;
     transition: 300ms all;
+    z-index: 999;
     &:hover {
       opacity: 0.75;
       color: var(--color-1);

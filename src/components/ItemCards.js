@@ -53,13 +53,8 @@ const ItemCards = ({ item, index }) => {
 
   return (
     <SectionCards>
-      <CardsImgContainer>
-        <img
-          className="img"
-          alt="상품 이미지 입니다."
-          src={item.image_path}
-          onClick={handleModal}
-        />
+      <CardsImgContainer onClick={handleModal}>
+        <img className="img" alt="상품 이미지 입니다." src={item.image_path} />
       </CardsImgContainer>
       <CardsDescription>
         <span className="cards-name">{item.name}</span>
