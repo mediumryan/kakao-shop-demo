@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainNavContainer = styled.nav`
   display: flex;
   align-items: center;
-  padding: 0 3.5rem 0 7rem;
+  padding: 0 var(--padding-medium-large) 0 var(--padding-large);
   border-bottom: 2px solid var(--color-1);
   position: relative;
   @media screen and (max-width: 413px) {
@@ -18,7 +18,7 @@ export const NavTitle = styled.div`
   cursor: pointer;
   h1 {
     color: #645cbb;
-    font-size: 28px;
+    font-size: var(--font-size-medium);
     @media screen and (max-width: 413px) {
       display: none;
     }
@@ -30,12 +30,12 @@ export const NavTitle = styled.div`
 
 export const NavMenu = styled.ul`
   display: ${(props) => (props.show ? "flex" : "none")};
-  margin: 0 2rem;
+  margin: 0 var(--margin-medium);
   li {
-    padding: 0.5rem 1rem;
+    padding: var(--padding-small) var(--padding-medium);
     cursor: pointer;
     font-weight: var(--font-weight-bold);
-    margin-right: 0.5rem;
+    margin-right: var(--margin-micro);
     border-bottom: 1px solid transparent;
     transition: var(--animation-duration) all;
     &:hover {
@@ -45,8 +45,8 @@ export const NavMenu = styled.ul`
       margin: 0;
       width: 100%;
       padding: 0;
-      padding-bottom: 12px;
-      margin-bottom: 12px;
+      padding-bottom: var(--padding-micro);
+      margin-bottom: var(--margin-medium);
       text-align: center;
     }
   }
@@ -61,10 +61,10 @@ export const NavOthers = styled.ul`
   display: ${(props) => (props.show ? "flex" : "none")};
   margin-left: auto;
   li {
-    padding: 0.5rem 1rem;
+    padding: var(--padding-small) var(--padding-medium);
     cursor: pointer;
     font-weight: var(--font-weight-bold);
-    margin-right: 0.5rem;
+    margin-right: var(--margin-micro);
     border-bottom: 1px solid transparent;
     transition: var(--animation-duration) all;
     &:hover {
@@ -72,6 +72,6 @@ export const NavOthers = styled.ul`
     }
   }
   @media screen and (max-width: 413px) {
-    margin: 12px auto;
+    margin: var(--margin-medium) auto;
   }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  font-family: "GmarketSansMedium";
+  font-family: var(--font-family-default);
   width: 100%;
 `;
 

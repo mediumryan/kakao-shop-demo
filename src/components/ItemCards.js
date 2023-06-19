@@ -7,8 +7,6 @@ import {
   SectionCards,
   CardsImgContainer,
   CardsDescription,
-  CardTitlePrice,
-  CardCartIcon,
   CardIndex,
 } from "../styled/common-section-style/SectionCards";
 
@@ -64,19 +62,15 @@ const ItemCards = ({ item, index }) => {
         />
       </CardsImgContainer>
       <CardsDescription>
-        <CardTitlePrice>
-          <span className="cards-name">{item.name}</span>
-          <span>{item.price.toLocaleString()}원</span>
-        </CardTitlePrice>
-        <CardCartIcon>
-          <span className="cards-cart" onClick={handleAddToBtn}>
-            🛒
-          </span>
-        </CardCartIcon>
+        <span className="cards-name">{item.name}</span>
+        <span>{item.price.toLocaleString()}원</span>
+        <span className="cards-cart" onClick={handleAddToBtn}>
+          장바구니에 추가
+        </span>
       </CardsDescription>
       <CardIndex>{index + 1}</CardIndex>
       {show === true && <AddToModal show={show} setShow={setShow} />}
-      {detailModal == true && (
+      {detailModal === true && (
         <DetailModal
           item={item}
           detailModal={detailModal}
