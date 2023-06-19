@@ -13,7 +13,7 @@ React JS를 사용해 구현한 Kakao shop 쇼핑몰 사이트 입니다.
 
 -----------
 
-React JSを使って実装したカカオショップショッピングモールサイトです。
+React JSを使って実装したカカオショップe-commerce siteです。
 
 アイテムカテゴリには人形、傘、文具類、寝具類などがあり、物の各情報は作成者が任意にハードコーディングして使用しました。
 
@@ -26,7 +26,7 @@ React JSを使って実装したカカオショップショッピングモール
 
 ------------
 
-This is a Kakao shop shopping mall site implemented using React JS.
+This is a Kakao shop e-commerce site implemented using React JS.
 
 Item categories include dolls, umbrellas, stationery, and bedding, and each information of the item was hardcoded and used arbitrarily by the author.
 
