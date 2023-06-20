@@ -74,78 +74,7 @@ button {
   display: none;
 }
 
-/* 카트 */
-
-#cart-cards {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-cards-left {
-  display: flex;
-  align-items: center;
-}
-
-.cart-cards-images-container {
-  display: inline;
-}
-
-.cart-cards-images {
-  margin: 0 1rem;
-}
-
-.cart-cards-description {
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-cards-name,
-.cart-cards-price {
-  margin-bottom: 0.5rem;
-}
-
-.cart-cards-name {
-  font-size: 0.8rem;
-}
-
-.cart-cards-price {
-  font-weight: var(--font-weight-bold);
-}
-
-.cart-cards-btn-box {
-  display: flex;
-  align-items: center;
-}
-
-.cart-plus-btn,
-.cart-minus-btn {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: none;
-  outline: none;
-  border: 2px solid var(--color-light-grey);
-  cursor: pointer;
-}
-
-.cart-quantity {
-  width: 2rem;
-  text-align: center;
-}
-
-.cart-cards-right {
-  background: none;
-  outline: none;
-  border: none;
-  font-size: 1.25rem;
-  color: var(--color-light-grey);
-  cursor: pointer;
-  padding: 1rem;
-}
-
-/* 갤럭시S20 울트라(세로) 기준 미디어쿼리 */
+/* 미디어쿼리 */
 @media only screen and (max-width: 413px) {
   :root {
     /* font-size */

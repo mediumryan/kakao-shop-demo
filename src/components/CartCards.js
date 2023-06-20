@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 // styled-components 불러오기
-import { CartImgContainer } from "../styled/styled-cart/StyledCartContainer";
+import {
+  StyledCartCards,
+  CartContents,
+  CartImgContainer,
+  CartDescription,
+  CartBtnBox,
+} from "../styled/styled-cart/StyledCartCards";
 
 const CartCards = ({ item, index, cart, setCart }) => {
   useEffect(() => {
@@ -45,8 +51,8 @@ const CartCards = ({ item, index, cart, setCart }) => {
   }
 
   return (
-    <div id="cart-cards">
-      <div className="cart-cards-left">
+    <StyledCartCards>
+      <CartContents>
         <input
           type="checkbox"
           onClick={handleItemCheckBox}
@@ -60,26 +66,20 @@ const CartCards = ({ item, index, cart, setCart }) => {
             src={item.image_path}
           />
         </CartImgContainer>
-        <div className="cart-cards-description">
-          <p className="cart-cards-name">{item.name}</p>
-          <p className="cart-cards-price">
-            {(item.price * item.quantity).toLocaleString()}원
-          </p>
-          <div className="cart-cards-btn-box">
-            <button className="cart-minus-btn" onClick={minusCount}>
-              -
-            </button>
-            <p className="cart-quantity">{item.quantity}</p>
-            <button className="cart-plus-btn" onClick={plusCount}>
-              +
-            </button>
-          </div>
-        </div>
-      </div>
+        <CartDescription>
+          <p>{item.name}</p>
+          <p>{(item.price * item.quantity).toLocaleString()}원</p>
+          <CartBtnBox>
+            <button onClick={minusCount}>-</button>
+            <p>{item.quantity}</p>
+            <button onClick={plusCount}>+</button>
+          </CartBtnBox>
+        </CartDescription>
+      </CartContents>
       <button className="cart-cards-right" onClick={deleteItem}>
         X
       </button>
-    </div>
+    </StyledCartCards>
   );
 };
 
