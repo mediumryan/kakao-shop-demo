@@ -21,6 +21,7 @@ import {
   MainContainer,
   MainKakaoLogo,
 } from "./styled/styled-main-container/StyledMainContainer";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [item] = useState(items);
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </MainContainer>
   );
 }

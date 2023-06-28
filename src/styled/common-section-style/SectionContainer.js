@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SectionContainer = styled.div`
   position: relative;
-  padding: 0 calc(var(--padding-large) * 2);
+  padding: calc(var(--padding-large) * 2);
   padding-top: var(--padding-medium-large);
   display: flex;
   flex-direction: column;

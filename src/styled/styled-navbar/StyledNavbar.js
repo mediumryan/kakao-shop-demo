@@ -5,7 +5,12 @@ export const MainNavContainer = styled.nav`
   align-items: center;
   padding: 0 var(--padding-medium-large) 0 var(--padding-large);
   border-bottom: 2px solid var(--color-1);
-  position: relative;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: var(--margin-large);
+  z-index: 999;
   @media screen and (max-width: 413px) {
     border-bottom: none;
     flex-direction: column;
