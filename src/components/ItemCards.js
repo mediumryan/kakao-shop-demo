@@ -10,7 +10,7 @@ import {
   CardIndex,
 } from "../styled/common-section-style/SectionCards";
 
-const ItemCards = ({ item, index }) => {
+const ItemCards = ({ item, index, cardShow }) => {
   const [show, setShow] = useState(false);
   const [detailModal, setDetailModal] = useState(false);
 
@@ -52,7 +52,7 @@ const ItemCards = ({ item, index }) => {
   }
 
   return (
-    <SectionCards>
+    <SectionCards active={cardShow}>
       <CardsImgContainer onClick={handleModal}>
         <img className="img" alt="상품 이미지 입니다." src={item.image_path} />
       </CardsImgContainer>

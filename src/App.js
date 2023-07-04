@@ -7,11 +7,7 @@ import { items } from "./data";
 import MainNav from "./components/MainNav";
 // 페이지 불러오기
 import Home from "./pages/Home";
-import Doll from "./pages/Doll";
-import Umbrella from "./pages/Umbrella";
-import Stationery from "./pages/Stationery";
 import Cart from "./pages/Cart";
-import Bedding from "./pages/Bedding";
 import SignIn from "./pages/SignIn";
 import NotFound from "./pages/NotFound";
 // 타이틀 이미지 불러오기
@@ -24,20 +20,22 @@ import {
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [item] = useState(items);
+  const [item, setItem] = useState(items);
+  const [show, setShow] = useState(true);
+
+  const dollFilter = items.filter((a) => a.category === "doll");
+  const umbFilter = items.filter((a) => a.category === "umbrella");
+  const staFilter = items.filter((a) => a.category === "stationery");
+  const bedFilter = items.filter((a) => a.category === "bedding");
 
   return (
     <MainContainer>
-      <MainNav />
+      <MainNav item={item} setItem={setItem} show={show} setShow={setShow} />
       <MainKakaoLogo>
         <img src={kakaoLogo} alt="카카오 로고 입니다." />
       </MainKakaoLogo>
       <Routes>
-        <Route path="/" element={<Home item={item} />} />
-        <Route path="/doll" element={<Doll item={item} />} />
-        <Route path="/umbrella" element={<Umbrella item={item} />} />
-        <Route path="/stationery" element={<Stationery item={item} />} />
-        <Route path="/bedding" element={<Bedding item={item} />} />
+        <Route path="/" element={<Home item={item} show={show} />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />

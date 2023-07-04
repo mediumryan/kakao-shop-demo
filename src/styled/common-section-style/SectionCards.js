@@ -13,6 +13,7 @@ export const SectionCardsContainer = styled.div`
 `;
 
 export const SectionCards = styled.div`
+  opacity: ${(props) => (props.active ? 1 : 0)};
   position: relative;
   margin: var(--margin-small);
   margin-bottom: var(--margin-medium-large);

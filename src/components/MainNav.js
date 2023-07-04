@@ -9,63 +9,78 @@ import {
   NavMenu,
   NavOthers,
 } from "../styled/styled-navbar/StyledNavbar";
-import { NavToggleBtn } from "../styled/styled-navbar/StyledNavToggle";
+import { items } from "../data";
 
-const MainNav = () => {
+const MainNav = ({ item, setItem, show, setShow }) => {
   const navigate = useNavigate();
-  const [toggle, setToggle] = useState(true);
-  const handleToggle = () => {
-    setToggle(!toggle);
+
+  const allFilter = items;
+  const dollFilter = items.filter((a) => a.category === "doll");
+  const umbFilter = items.filter((a) => a.category === "umbrella");
+  const staFilter = items.filter((a) => a.category === "stationery");
+  const bedFilter = items.filter((a) => a.category === "bedding");
+
+  const handleFilter = (filter) => {
+    setItem(filter);
+  };
+
+  const handleOpacityEffect = () => {
+    setShow(false);
+    const timer = setTimeout(() => {
+      setShow(true);
+      clearTimeout(timer);
+    }, 500);
   };
 
   return (
     <MainNavContainer>
-      <NavTitle
-        onClick={() => {
-          navigate("/");
-        }}
-      >
+      <NavTitle onClick={() => {}}>
         <h1>Ryan Shop</h1>
         <img src={mainLogo} alt="카카오 캐릭터 로고 이미지입니다." />
       </NavTitle>
-      <NavMenu show={toggle}>
+      <NavMenu active={show}>
         <li
           onClick={() => {
-            navigate("/");
+            handleFilter(allFilter);
+            handleOpacityEffect();
           }}
         >
           홈
         </li>
         <li
           onClick={() => {
-            navigate("/doll");
+            handleFilter(dollFilter);
+            handleOpacityEffect();
           }}
         >
           인형
         </li>
         <li
           onClick={() => {
-            navigate("/umbrella");
+            handleFilter(umbFilter);
+            handleOpacityEffect();
           }}
         >
           우산
         </li>
         <li
           onClick={() => {
-            navigate("/stationery");
+            handleFilter(staFilter);
+            handleOpacityEffect();
           }}
         >
           문구류
         </li>
         <li
           onClick={() => {
-            navigate("/bedding");
+            handleFilter(bedFilter);
+            handleOpacityEffect();
           }}
         >
           침구류
         </li>
       </NavMenu>
-      <NavOthers show={toggle}>
+      <NavOthers>
         <li>🔔</li>
         <li
           onClick={() => {
@@ -82,7 +97,6 @@ const MainNav = () => {
           👤
         </li>
       </NavOthers>
-      <NavToggleBtn onClick={handleToggle}>☰</NavToggleBtn>
     </MainNavContainer>
   );
 };

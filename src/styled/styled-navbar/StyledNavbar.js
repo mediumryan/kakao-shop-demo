@@ -35,8 +35,9 @@ export const NavTitle = styled.div`
 `;
 
 export const NavMenu = styled.ul`
-  display: ${(props) => (props.show ? "flex" : "none")};
+  display: flex;
   margin: 0 var(--margin-medium);
+  transition: 500ms all;
   li {
     padding: var(--padding-small) var(--padding-medium);
     cursor: pointer;
@@ -64,7 +65,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavOthers = styled.ul`
-  display: ${(props) => (props.show ? "flex" : "none")};
+  display: flex;
   margin-left: auto;
   li {
     padding: var(--padding-small) var(--padding-medium);

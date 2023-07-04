@@ -15,6 +15,10 @@ React JS で作られたカカオショップ EC サイトです。
 - Header の CSS を若干変更しました。
 - Header と Footer を追加する作業に合わせて基本セクションズのデザイン（padding）値を小幅に修正しました。
 
+**2023/07/05**
+
+- 商品一覧のレイアウトを全面的に変更しました。 個別コンポーネント管理 → 一つのコンポーネントとして管理
+
 ---
 
 React JS로 제작한 카카오샵 E-커머스 어플리케이션 입니다.
@@ -32,6 +36,10 @@ React JS로 제작한 카카오샵 E-커머스 어플리케이션 입니다.
 - 하단바 섹션을 추가하였습니다.
 - 헤더의 CSS값을 변경하였습니다.
 - 헤더와 하단바를 추가하는 작업에 있어 필요한 기본 섹션즈의 디자인(padding)값을 소폭 수정하였습니다.
+
+**2023/07/05**
+
+- 상품목록의 배치를 완전 변경하였습니다. 개별 컴포넌트 관리 -> 하나의 컴포넌트로 관리
 
 ---
 
@@ -51,3 +59,7 @@ And I'll modify it so that it is compatible with devices of various sizes.
 - Added Footer section.
 - Slightly changed style of Header section.
 - Modified the design (padding) value of basic sections slightly to match the work of adding Header and Footer.
+
+**2023/07/05**
+
+- The layout of the product list has been completely changed. Individual component management -> Management as one component
