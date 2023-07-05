@@ -23,19 +23,26 @@ export default function App() {
   const [item, setItem] = useState(items);
   const [show, setShow] = useState(true);
 
-  const dollFilter = items.filter((a) => a.category === "doll");
-  const umbFilter = items.filter((a) => a.category === "umbrella");
-  const staFilter = items.filter((a) => a.category === "stationery");
-  const bedFilter = items.filter((a) => a.category === "bedding");
+  const [title, setTitle] = useState("모든상품");
 
   return (
     <MainContainer>
-      <MainNav item={item} setItem={setItem} show={show} setShow={setShow} />
+      <MainNav
+        item={item}
+        setItem={setItem}
+        show={show}
+        setShow={setShow}
+        title={title}
+        setTitle={setTitle}
+      />
       <MainKakaoLogo>
         <img src={kakaoLogo} alt="카카오 로고 입니다." />
       </MainKakaoLogo>
       <Routes>
-        <Route path="/" element={<Home item={item} show={show} />} />
+        <Route
+          path="/"
+          element={<Home item={item} show={show} title={title} />}
+        />
         <Route path="/cart" element={<Cart />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />

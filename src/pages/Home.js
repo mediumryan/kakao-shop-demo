@@ -7,10 +7,10 @@ import {
 } from "../styled/common-section-style/SectionContainer";
 import { SectionCardsContainer } from "../styled/common-section-style/SectionCards";
 
-const Home = ({ item, show }) => {
+const Home = ({ item, show, title }) => {
   return (
     <SectionContainer>
-      <SectionTitle>모든상품</SectionTitle>
+      <SectionTitle>{title}</SectionTitle>
       <SectionCardsContainer>
         {item.map((HomeItem, homeIndex) => {
           return (

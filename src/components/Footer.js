@@ -13,6 +13,11 @@ const FooterContainer = styled.footer`
   &:hover {
     opacity: 1;
   }
+  @media screen and (max-width: 413px) {
+    max-height: 40px;
+    overflow: scroll;
+    padding: var(--padding-medium) calc(var(--padding-large));
+  }
 `;
 
 export default function Footer() {

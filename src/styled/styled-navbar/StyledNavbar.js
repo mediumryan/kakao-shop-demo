@@ -31,11 +31,14 @@ export const NavTitle = styled.div`
   }
   img {
     height: 120px;
+    @media screen and (max-width: 413px) {
+      height: 80px;
+    }
   }
 `;
 
 export const NavMenu = styled.ul`
-  display: flex;
+  display: ${(props) => (props.visible ? "none" : "flex")};
   margin: 0 var(--margin-medium);
   transition: 500ms all;
   li {
@@ -65,7 +68,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavOthers = styled.ul`
-  display: flex;
+  display: ${(props) => (props.visible ? "none" : "flex")};
   margin-left: auto;
   li {
     padding: var(--padding-small) var(--padding-medium);
