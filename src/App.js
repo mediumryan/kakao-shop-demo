@@ -21,28 +21,15 @@ import Footer from "./components/Footer";
 
 export default function App() {
   const [item, setItem] = useState(items);
-  const [show, setShow] = useState(true);
-
-  const [title, setTitle] = useState("모든상품");
 
   return (
     <MainContainer>
-      <MainNav
-        item={item}
-        setItem={setItem}
-        show={show}
-        setShow={setShow}
-        title={title}
-        setTitle={setTitle}
-      />
+      <MainNav item={item} setItem={setItem} />
       <MainKakaoLogo>
         <img src={kakaoLogo} alt="카카오 로고 입니다." />
       </MainKakaoLogo>
       <Routes>
-        <Route
-          path="/"
-          element={<Home item={item} show={show} title={title} />}
-        />
+        <Route path="/" element={<Home item={item} />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />

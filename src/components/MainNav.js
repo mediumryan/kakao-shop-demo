@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 // 로고 이미지 불러오기
 import mainLogo from "./../images/main-logo.png";
 // styled-components 불러오기
@@ -9,15 +10,22 @@ import {
   NavOthers,
 } from "../styled/styled-navbar/StyledNavbar";
 import { items } from "../data";
+// toggle button
 import { NavToggleBtn } from "../styled/styled-navbar/StyledNavToggle";
-import { useState } from "react";
+// rtk...
+import { changeTitle } from "../store/titleSlice";
+import { setItemShow, setItemShowTrue } from "../store/itemShowSlice";
+import { setBtnRotate } from "../store/btnRotateSlice";
 
-const MainNav = ({ item, setItem, show, setShow, title, setTitle }) => {
+const MainNav = ({ item, setItem }) => {
   const navigate = useNavigate();
-  const [btnRotate, setBtnRotate] = useState(false);
+
+  const dispatch = useDispatch();
+  const itemShow = useSelector((state) => state.itemShow.status);
+  const btnRotate = useSelector((state) => state.btnRotate.status);
 
   const handleToggleBtn = () => {
-    setBtnRotate(!btnRotate);
+    dispatch(setBtnRotate());
   };
 
   const allFilter = items;
@@ -31,17 +39,15 @@ const MainNav = ({ item, setItem, show, setShow, title, setTitle }) => {
   };
 
   const handleOpacityEffect = () => {
-    setShow(false);
+    dispatch(setItemShow());
     const timer = setTimeout(() => {
-      setShow(true);
+      dispatch(setItemShowTrue());
       clearTimeout(timer);
     }, 500);
   };
 
   const handleTitle = (val) => {
-    let copy = [...title];
-    copy = val;
-    setTitle(copy);
+    dispatch(changeTitle(val));
   };
 
   return (
@@ -57,7 +63,7 @@ const MainNav = ({ item, setItem, show, setShow, title, setTitle }) => {
         <h1>Ryan Shop</h1>
         <img src={mainLogo} alt="카카오 캐릭터 로고 이미지입니다." />
       </NavTitle>
-      <NavMenu active={show} visible={btnRotate}>
+      <NavMenu active={itemShow} visible={btnRotate}>
         <li
           onClick={() => {
             navigate("/");

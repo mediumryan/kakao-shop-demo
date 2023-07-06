@@ -6,20 +6,18 @@ import {
   SectionTitle,
 } from "../styled/common-section-style/SectionContainer";
 import { SectionCardsContainer } from "../styled/common-section-style/SectionCards";
+import { useSelector } from "react-redux";
 
-const Home = ({ item, show, title }) => {
+const Home = ({ item }) => {
+  const title = useSelector((state) => state.title.title);
+
   return (
     <SectionContainer>
       <SectionTitle>{title}</SectionTitle>
       <SectionCardsContainer>
         {item.map((HomeItem, homeIndex) => {
           return (
-            <ItemCards
-              item={HomeItem}
-              key={HomeItem.id}
-              index={homeIndex}
-              cardShow={show}
-            />
+            <ItemCards item={HomeItem} key={HomeItem.id} index={homeIndex} />
           );
         })}
       </SectionCardsContainer>

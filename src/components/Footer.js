@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
+  display: none;
   position: absolute;
   bottom: 0;
   line-height: 1.5;

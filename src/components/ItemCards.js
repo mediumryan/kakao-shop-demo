@@ -9,23 +9,28 @@ import {
   CardsDescription,
   CardIndex,
 } from "../styled/common-section-style/SectionCards";
+import { useDispatch, useSelector } from "react-redux";
+import { openAddTo, closeAddTo } from "../store/addToSlice";
 
-const ItemCards = ({ item, index, cardShow }) => {
-  const [show, setShow] = useState(false);
+const ItemCards = ({ item, index }) => {
   const [detailModal, setDetailModal] = useState(false);
 
+  const dispatch = useDispatch();
+  const itemShow = useSelector((state) => state.itemShow.status);
+  const addTo = useSelector((state) => state.addTo.status);
+
   useEffect(() => {
-    if (show === true) {
-      const a = setTimeout(() => {
-        setShow(!show);
+    if (addTo === true) {
+      const timer = setTimeout(() => {
+        dispatch(closeAddTo());
       }, 2000);
-      return () => clearTimeout(a);
+      return () => clearTimeout(timer);
     }
-  }, [show]);
+  }, [addTo]);
 
   function handleAddToBtn() {
     // UI 핸들링
-    setShow(!show);
+    dispatch(openAddTo());
     // 로컬 저장소 값 가져오기
     const localCart = localStorage.getItem("cart");
     const parsedCart = JSON.parse(localCart);
@@ -34,9 +39,9 @@ const ItemCards = ({ item, index, cardShow }) => {
       localStorage.setItem("cart", JSON.stringify([item]));
     } else {
       // 로컬스토리지에 상품 정보가 있다면 중복 확인
-      const found = parsedCart.findIndex((a) => a.id == item.id);
+      const found = parsedCart.findIndex((a) => a.id === item.id);
       // 중복값이 없다면 item 추가 후 저장
-      if (found == -1) {
+      if (found === -1) {
         parsedCart.push(item);
         localStorage.setItem("cart", JSON.stringify(parsedCart));
         // 중복값이 있다면 findIndex에서 구한 값으로 해당 요소의 개수만 증가
@@ -47,12 +52,12 @@ const ItemCards = ({ item, index, cardShow }) => {
     }
   }
 
-  function handleModal(e) {
+  function handleModal() {
     setDetailModal(!detailModal);
   }
 
   return (
-    <SectionCards active={cardShow}>
+    <SectionCards active={itemShow}>
       <CardsImgContainer onClick={handleModal}>
         <img className="img" alt="상품 이미지 입니다." src={item.image_path} />
       </CardsImgContainer>
@@ -64,7 +69,7 @@ const ItemCards = ({ item, index, cardShow }) => {
         </span>
       </CardsDescription>
       <CardIndex>{index + 1}</CardIndex>
-      {show === true && <AddToModal show={show} setShow={setShow} />}
+      {addTo === true && <AddToModal />}
       {detailModal === true && (
         <DetailModal
           item={item}
