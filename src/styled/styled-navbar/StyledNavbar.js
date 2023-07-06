@@ -38,7 +38,7 @@ export const NavTitle = styled.div`
 `;
 
 export const NavMenu = styled.ul`
-  display: ${(props) => (props.visible ? "none" : "flex")};
+  display: flex;
   margin: 0 var(--margin-medium);
   transition: 500ms all;
   li {
@@ -61,6 +61,7 @@ export const NavMenu = styled.ul`
     }
   }
   @media screen and (max-width: 413px) {
+    display: ${(props) => (props.visible ? "none" : "flex")};
     flex-direction: column;
     margin: 0;
     width: 100%;
@@ -68,7 +69,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavOthers = styled.ul`
-  display: ${(props) => (props.visible ? "none" : "flex")};
+  display: flex;
   margin-left: auto;
   li {
     padding: var(--padding-small) var(--padding-medium);
@@ -82,6 +83,7 @@ export const NavOthers = styled.ul`
     }
   }
   @media screen and (max-width: 413px) {
+    display: ${(props) => (props.visible ? "none" : "flex")};
     margin: var(--margin-medium) auto;
   }
 `;
