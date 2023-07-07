@@ -45,7 +45,7 @@ const DetailModal = ({ item, detailModal, setDetailModal }) => {
   }
 
   return (
-    <DetailModalContainer show={detailModal ? true : false}>
+    <DetailModalContainer show={detailModal && true}>
       <DetailOverview>
         <DetailImgContainer>
           <img

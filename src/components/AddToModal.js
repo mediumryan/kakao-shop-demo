@@ -1,16 +1,12 @@
 // styled-components 불러오기
-import { useDispatch } from "react-redux";
 import {
   AddToModalContainer,
   AddToModalLink,
 } from "../styled/styled-modal/AddToModalContainer";
-import { closeAddTo } from "../store/addToSlice";
 
-const AddToModal = () => {
-  const dispatch = useDispatch();
-
+const AddToModal = ({ addTo, setAddTo }) => {
   function close() {
-    dispatch(closeAddTo());
+    setAddTo(false);
   }
 
   return (

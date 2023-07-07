@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 // 컴포넌트 불러오기
 import AddToModal from "./AddToModal";
 import DetailModal from "./DetailModal";
@@ -9,20 +10,17 @@ import {
   CardsDescription,
   CardIndex,
 } from "../styled/common-section-style/SectionCards";
-import { useDispatch, useSelector } from "react-redux";
-import { openAddTo, closeAddTo } from "../store/addToSlice";
 
 const ItemCards = ({ item, index }) => {
   const [detailModal, setDetailModal] = useState(false);
+  const [addTo, setAddTo] = useState(false);
 
-  const dispatch = useDispatch();
   const itemShow = useSelector((state) => state.itemShow.status);
-  const addTo = useSelector((state) => state.addTo.status);
 
   useEffect(() => {
     if (addTo === true) {
       const timer = setTimeout(() => {
-        dispatch(closeAddTo());
+        setAddTo(!addTo);
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -30,7 +28,7 @@ const ItemCards = ({ item, index }) => {
 
   function handleAddToBtn() {
     // UI 핸들링
-    dispatch(openAddTo());
+    setAddTo(true);
     // 로컬 저장소 값 가져오기
     const localCart = localStorage.getItem("cart");
     const parsedCart = JSON.parse(localCart);
@@ -69,7 +67,7 @@ const ItemCards = ({ item, index }) => {
         </span>
       </CardsDescription>
       <CardIndex>{index + 1}</CardIndex>
-      {addTo === true && <AddToModal />}
+      {addTo && <AddToModal addTo={addTo} setAddTo={setAddTo} />}
       {detailModal === true && (
         <DetailModal
           item={item}
