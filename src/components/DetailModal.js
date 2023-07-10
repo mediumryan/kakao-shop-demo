@@ -51,25 +51,25 @@ const DetailModal = ({ item, detailModal, setDetailModal }) => {
           <img
             className="img detail-image"
             src={item.image_path}
-            alt="상품 상세 이미지입니다."
+            alt="商品のイメージです。."
           />
         </DetailImgContainer>
         <DetailDescription>
           <p>{item.name}</p>
           <p className="detail-price">{item.price.toLocaleString()}원</p>
           <button className="detail-add-btn" onClick={handleAddToBtn}>
-            장바구니에 담기
+            カートに追加する
           </button>
         </DetailDescription>
       </DetailOverview>
-      <h3>상품 프리뷰</h3>
+      <h3>商品プレビュー</h3>
       <DetailPreview>
         {detailImgArr.map((imgItem, imgIndex) => {
           return (
             <PreviewItems key={imgItem.id}>
               <img
                 src={item.image_path}
-                alt="상품 상세화면 미리보기 이미지 입니다."
+                alt="商品のプレビューイメージです。"
                 className="img"
               />
             </PreviewItems>

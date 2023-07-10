@@ -19,11 +19,9 @@ const DetailAddToModal = ({ detailAddTo, setDetailAddTo }) => {
 
   return (
     <DetailAddToModalContainer onClick={closeDetailAddTo}>
-      <p>상품이 장바구니에 추가되었습니다!</p>
-      <p>이 화면은 2초 후 자동으로 사라집니다.</p>
-      <DetailAddToModalLink to="./../cart">
-        -- 장바구니 확인 --
-      </DetailAddToModalLink>
+      <p>商品がカートに追加されました！</p>
+      <p>この画面は２秒後自動的に消えます。</p>
+      <DetailAddToModalLink to="./../cart">🛒へ行く</DetailAddToModalLink>
     </DetailAddToModalContainer>
   );
 };

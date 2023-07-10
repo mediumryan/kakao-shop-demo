@@ -69,7 +69,7 @@ const Cart = () => {
 
   return (
     <SectionContainer>
-      <SectionTitle>장바구니</SectionTitle>
+      <SectionTitle>カート</SectionTitle>
       <CartSelectDelAll>
         <CartSelectAll>
           <input
@@ -77,9 +77,9 @@ const Cart = () => {
             onChange={onChangeCheckAll}
             onClick={handleCheckAll}
           />
-          <span>전체 {checkedCart.length}</span>
+          <span>全て選択する {checkedCart.length}</span>
         </CartSelectAll>
-        <CartDelBtn onClick={handleSelectDelBtn}>선택삭제</CartDelBtn>
+        <CartDelBtn onClick={handleSelectDelBtn}>選択した項目削除</CartDelBtn>
       </CartSelectDelAll>
       <CartCardsContainer>
         {cart.map((item, index) => {
@@ -96,10 +96,10 @@ const Cart = () => {
       </CartCardsContainer>
       <CartBottom>
         <CartQuantityPrice>
-          <span>상품 수 : {totalQuantity}개</span>
-          <span>가격 : {totalPrice.toLocaleString()}원</span>
+          <span>全て : {totalQuantity}コ</span>
+          <span>価格 : {totalPrice.toLocaleString()}円</span>
         </CartQuantityPrice>
-        <CartBuyBtn>결제하기</CartBuyBtn>
+        <CartBuyBtn>購入する</CartBuyBtn>
       </CartBottom>
     </SectionContainer>
   );

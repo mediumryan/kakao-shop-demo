@@ -57,11 +57,11 @@ const MainNav = ({ item, setItem }) => {
           navigate("/");
           handleFilter(allFilter);
           handleOpacityEffect();
-          handleTitle("모든상품");
+          handleTitle("ホーム");
         }}
       >
         <h1>Ryan Shop</h1>
-        <img src={mainLogo} alt="카카오 캐릭터 로고 이미지입니다." />
+        <img src={mainLogo} alt="カカオのロゴイメージです。" />
       </NavTitle>
       <NavMenu active={itemShow} visible={btnRotate}>
         <li
@@ -70,10 +70,10 @@ const MainNav = ({ item, setItem }) => {
             handleFilter(allFilter);
             handleOpacityEffect();
             handleToggleBtn();
-            handleTitle("모든상품");
+            handleTitle("ホーム");
           }}
         >
-          홈
+          ホーム
         </li>
         <li
           onClick={() => {
@@ -81,10 +81,10 @@ const MainNav = ({ item, setItem }) => {
             handleFilter(dollFilter);
             handleOpacityEffect();
             handleToggleBtn();
-            handleTitle("인형");
+            handleTitle("ぬいぐるみ");
           }}
         >
-          인형
+          ぬいぐるみ
         </li>
         <li
           onClick={() => {
@@ -92,10 +92,10 @@ const MainNav = ({ item, setItem }) => {
             handleFilter(umbFilter);
             handleOpacityEffect();
             handleToggleBtn();
-            handleTitle("우산");
+            handleTitle("傘");
           }}
         >
-          우산
+          傘
         </li>
         <li
           onClick={() => {
@@ -103,10 +103,10 @@ const MainNav = ({ item, setItem }) => {
             handleFilter(staFilter);
             handleOpacityEffect();
             handleToggleBtn();
-            handleTitle("문구류");
+            handleTitle("文具");
           }}
         >
-          문구류
+          文具
         </li>
         <li
           onClick={() => {
@@ -114,10 +114,10 @@ const MainNav = ({ item, setItem }) => {
             handleFilter(bedFilter);
             handleOpacityEffect();
             handleToggleBtn();
-            handleTitle("침구류");
+            handleTitle("寝具");
           }}
         >
-          침구류
+          寝具
         </li>
       </NavMenu>
       <NavOthers visible={btnRotate}>

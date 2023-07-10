@@ -62,13 +62,13 @@ const CartCards = ({ item, index, cart, setCart }) => {
         <CartImgContainer>
           <img
             className="img"
-            alt="상품 이미지 입니다."
+            alt="商品のイメージです。"
             src={item.image_path}
           />
         </CartImgContainer>
         <CartDescription>
           <p>{item.name}</p>
-          <p>{(item.price * item.quantity).toLocaleString()}원</p>
+          <p>{(item.price * item.quantity).toLocaleString()}円</p>
           <CartBtnBox>
             <button onClick={minusCount}>-</button>
             <p>{item.quantity}</p>

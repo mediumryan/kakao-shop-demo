@@ -61,9 +61,9 @@ const ItemCards = ({ item, index }) => {
       </CardsImgContainer>
       <CardsDescription>
         <span className="cards-name">{item.name}</span>
-        <span>{item.price.toLocaleString()}원</span>
+        <span>{item.price.toLocaleString()}円</span>
         <span className="cards-cart" onClick={handleAddToBtn}>
-          장바구니에 추가
+          カートに追加する。
         </span>
       </CardsDescription>
       <CardIndex>{index + 1}</CardIndex>

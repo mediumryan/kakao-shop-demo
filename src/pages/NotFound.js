@@ -52,7 +52,7 @@ const NotFound = () => {
           navigate("/");
         }}
       >
-        Go Home
+        ホームへ
       </NFGoHome>
     </NFContainer>
   );
