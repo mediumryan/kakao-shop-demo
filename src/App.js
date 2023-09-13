@@ -13,14 +13,8 @@ import Bedding from './pages/Bedding';
 import Cart from './pages/Cart';
 import SignIn from './pages/SignIn';
 import NotFound from './pages/NotFound';
-import { useRecoilValue } from 'recoil';
-import { all } from './atom';
 
 export default function App() {
-    const hi = useRecoilValue(all);
-
-    console.log(hi);
-
     return (
         <MainContainer>
             <MainNav />
