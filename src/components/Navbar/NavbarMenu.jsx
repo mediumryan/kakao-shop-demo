@@ -1,78 +1,83 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
+import { navMenuState } from '../../atom';
 
 const NavMenu = styled.ul`
     display: flex;
     margin: 0 var(--margin-medium);
-    transition: 500ms all;
-    li {
-        padding: var(--padding-small) var(--padding-medium);
-        cursor: pointer;
-        font-weight: var(--font-weight-bold);
-        margin-right: var(--margin-micro);
-        border-bottom: 1px solid transparent;
-        transition: var(--animation-duration) all;
-        &:hover {
-            border-bottom: 1px solid var(--color-1);
-        }
-        @media screen and (max-width: 413px) {
-            margin: 0;
-            width: 100%;
-            padding: 0;
-            padding-bottom: var(--padding-micro);
-            margin-bottom: var(--margin-medium);
-            text-align: center;
-        }
-    }
-    @media screen and (max-width: 413px) {
-        display: ${(props) => (props.visible ? 'none' : 'flex')};
+    transition: 300ms all;
+    color: var(--primary-100);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        display: ${(props) => (props.visible ? 'flex' : 'none')};
         flex-direction: column;
         margin: 0;
         width: 100%;
     }
 `;
 
+const NavMenuItems = styled.li`
+    padding: var(--padding-small) var(--padding-medium);
+    font-weight: 700;
+    margin-right: var(--margin-micro);
+    border-bottom: 1px solid transparent;
+    transition: 300ms all;
+    cursor: pointer;
+    &:hover {
+        border-bottom: 1px solid var(--primary-100);
+    }
+    @media screen and (max-width: 413px) {
+        text-align: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        padding-bottom: var(--padding-micro);
+        margin-bottom: var(--margin-medium);
+    }
+`;
+
 export default function NavbarMenu() {
     const navigate = useNavigate();
+    const navMenu = useRecoilValue(navMenuState);
 
     return (
-        <NavMenu>
-            <li
+        <NavMenu visible={navMenu}>
+            <NavMenuItems
                 onClick={() => {
                     navigate('/');
                 }}
             >
                 ホーム
-            </li>
-            <li
+            </NavMenuItems>
+            <NavMenuItems
                 onClick={() => {
                     navigate('/doll');
                 }}
             >
                 ぬいぐるみ
-            </li>
-            <li
+            </NavMenuItems>
+            <NavMenuItems
                 onClick={() => {
                     navigate('/umbrella');
                 }}
             >
                 傘
-            </li>
-            <li
+            </NavMenuItems>
+            <NavMenuItems
                 onClick={() => {
                     navigate('/stationery');
                 }}
             >
                 文具
-            </li>
-            <li
+            </NavMenuItems>
+            <NavMenuItems
                 onClick={() => {
                     navigate('/bedding');
                 }}
             >
                 寝具
-            </li>
+            </NavMenuItems>
         </NavMenu>
     );
 }

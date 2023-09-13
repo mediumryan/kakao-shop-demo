@@ -199,3 +199,10 @@ export const beddingItem = selector({
         return all.filter((a) => a.category === 'bedding');
     },
 });
+
+// nav menu toggle state
+
+export const navMenuState = atom({
+    key: 'nav_menu_state',
+    default: false,
+});

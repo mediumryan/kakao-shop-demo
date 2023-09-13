@@ -18,11 +18,11 @@ export const SectionContainer = styled.div`
 
 export const SectionTitle = styled.h1`
     font-size: var(--font-size-medium-large);
-    font-weight: var(--font-weight-bold);
+    font-weight: 700;
     margin-bottom: var(--margin-medium-large);
     letter-spacing: 4px;
     font-style: italic;
-    @media screen and (max-width: 413px) {
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
         margin-top: calc(var(--margin-large) * 2);
     }
 `;

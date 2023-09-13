@@ -8,14 +8,14 @@ const MainNavContainer = styled.nav`
     display: flex;
     align-items: center;
     padding: 0 var(--padding-medium-large) 0 var(--padding-large);
-    border-bottom: 2px solid var(--color-1);
-    background-color: #fff;
+    border-bottom: 2px solid var(--bg-100);
+    background-color: var(--bg-200);
     position: fixed;
     width: 100%;
     top: 0;
     margin-bottom: var(--margin-large);
-    z-index: 999;
-    @media screen and (max-width: 413px) {
+    z-index: 5;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
         border-bottom: none;
         flex-direction: column;
         padding: 0;

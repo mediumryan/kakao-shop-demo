@@ -7,15 +7,16 @@ const NavTitle = styled.div`
     align-items: center;
     cursor: pointer;
     h1 {
-        color: #645cbb;
+        color: var(--primary-100);
         font-size: var(--font-size-medium);
-        @media screen and (max-width: 413px) {
+        font-weight: 700;
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
             display: none;
         }
     }
     img {
         height: 120px;
-        @media screen and (max-width: 413px) {
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
             height: 80px;
         }
     }

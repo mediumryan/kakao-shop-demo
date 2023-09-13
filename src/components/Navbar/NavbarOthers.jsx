@@ -1,49 +1,54 @@
 import { FaBell, FaRegUser, FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
+import { navMenuState } from '../../atom';
 
-export const NavOthers = styled.ul`
+const NavOthers = styled.ul`
     display: flex;
     margin-left: auto;
-    li {
-        padding: var(--padding-small) var(--padding-medium);
-        cursor: pointer;
-        font-weight: var(--font-weight-bold);
-        margin-right: var(--margin-micro);
-        border-bottom: 1px solid transparent;
-        transition: var(--animation-duration) all;
-        &:hover {
-            border-bottom: 1px solid var(--color-1);
-        }
+`;
+
+const NavOthersItems = styled.li`
+    color: var(--primary-100);
+    padding: var(--padding-small) var(--padding-medium);
+    font-weight: 700;
+    margin-right: var(--margin-micro);
+    border-bottom: 1px solid transparent;
+    transition: 300ms all;
+    cursor: pointer;
+    &:hover {
+        border-bottom: 1px solid var(--primary-100);
     }
-    @media screen and (max-width: 413px) {
-        display: ${(props) => (props.visible ? 'none' : 'flex')};
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        display: ${(props) => (props.visible ? 'flex' : 'none')};
         margin: var(--margin-medium) auto;
     }
 `;
 
 export default function NavbarOthers() {
     const navigate = useNavigate();
+    const navMenu = useRecoilValue(navMenuState);
 
     return (
-        <NavOthers>
-            <li>
+        <NavOthers visible={navMenu}>
+            <NavOthersItems>
                 <FaBell />
-            </li>
-            <li
+            </NavOthersItems>
+            <NavOthersItems
                 onClick={() => {
                     navigate('/cart');
                 }}
             >
                 <FaShoppingCart />
-            </li>
-            <li
+            </NavOthersItems>
+            <NavOthersItems
                 onClick={() => {
                     navigate('/sign-in');
                 }}
             >
                 <FaRegUser />
-            </li>
+            </NavOthersItems>
         </NavOthers>
     );
 }
