@@ -1,40 +1,40 @@
-import "./css/index.css";
-import { React, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-// 데이터 불러오기
-import { items } from "./data";
-// 컴포넌트 불러오기
-import MainNav from "./components/MainNav";
-// 페이지 불러오기
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import SignIn from "./pages/SignIn";
-import NotFound from "./pages/NotFound";
-// 타이틀 이미지 불러오기
-import kakaoLogo from "./images/kakao-logo.png";
-// styled-component 불러오기
-import {
-  MainContainer,
-  MainKakaoLogo,
-} from "./styled/styled-main-container/StyledMainContainer";
-import Footer from "./components/Footer";
+import './css/index.css';
+import { Routes, Route } from 'react-router-dom';
+import { MainContainer } from './styled/styled-main-container/StyledMainContainer';
+// components
+import MainNav from './components/Navbar/MainNav';
+import Footer from './components/Footer';
+// pages
+import Home from './pages/Home';
+import Doll from './pages/Doll';
+import Umbrella from './pages/Umbrella';
+import Stationery from './pages/Stationery';
+import Bedding from './pages/Bedding';
+import Cart from './pages/Cart';
+import SignIn from './pages/SignIn';
+import NotFound from './pages/NotFound';
+import { useRecoilValue } from 'recoil';
+import { all } from './atom';
 
 export default function App() {
-  const [item, setItem] = useState(items);
+    const hi = useRecoilValue(all);
 
-  return (
-    <MainContainer>
-      <MainNav item={item} setItem={setItem} />
-      <MainKakaoLogo>
-        <img src={kakaoLogo} alt="카카오 로고 입니다." />
-      </MainKakaoLogo>
-      <Routes>
-        <Route path="/" element={<Home item={item} />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </MainContainer>
-  );
+    console.log(hi);
+
+    return (
+        <MainContainer>
+            <MainNav />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/doll" element={<Doll />} />
+                <Route path="/umbrella" element={<Umbrella />} />
+                <Route path="/stationery" element={<Stationery />} />
+                <Route path="/bedding" element={<Bedding />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/sign-in" element={<SignIn />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+        </MainContainer>
+    );
 }
