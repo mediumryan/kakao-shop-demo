@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
-import { useRecoilValue } from 'recoil';
-// components
 // recoil
+import { useRecoilValue } from 'recoil';
 import { allItem } from './../atom';
+// components
 import Card from '../components/Card/Card';
 
 export const Container = styled.div`
@@ -40,12 +40,12 @@ export const CardsContainer = styled.div`
     }
 `;
 
-const Home = () => {
+const Home = ({ pageTitle }) => {
     const all = useRecoilValue(allItem);
 
     return (
         <Container>
-            <Title>page title</Title>
+            <Title>{pageTitle}</Title>
             <CardsContainer>
                 {all.map((item, index) => {
                     return <Card item={item} key={item.id} index={index} />;

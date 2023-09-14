@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import CardDescriptions from './CardDescriptions';
 import CardImg from './CardImg';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const CardWrapper = styled.div`
+const CardWrapper = styled(motion.div)`
     position: relative;
     margin: var(--margin-small);
     margin-bottom: var(--margin-medium-large);
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
 `;
 
 const CardIndex = styled.span`
@@ -18,12 +20,34 @@ const CardIndex = styled.span`
     cursor: default;
 `;
 
+const cardVariants = {
+    initial: {
+        scale: 1,
+        y: 0,
+    },
+    hover: {
+        scale: 1.05,
+        y: -20,
+        transition: {
+            type: 'tween',
+            duration: 0.5,
+            delay: 0.3,
+        },
+    },
+};
+
 export default function Card({ item, index }) {
     return (
-        <CardWrapper>
-            <CardImg item={item} />
-            <CardDescriptions item={item} />
-            <CardIndex>{index + 1}</CardIndex>
-        </CardWrapper>
+        <AnimatePresence>
+            <CardWrapper
+                variants={cardVariants}
+                initial="initial"
+                whileHover="hover"
+            >
+                <CardImg item={item} />
+                <CardDescriptions item={item} />
+                <CardIndex>{index + 1}</CardIndex>
+            </CardWrapper>
+        </AnimatePresence>
     );
 }

@@ -1,6 +1,5 @@
 import './css/index.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainContainer } from './styled/styled-main-container/StyledMainContainer';
 // components
 import MainNav from './components/Navbar/MainNav';
 import Footer from './components/Footer';
@@ -16,19 +15,28 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
     return (
-        <MainContainer>
+        <div>
             <MainNav />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/doll" element={<Doll />} />
-                <Route path="/umbrella" element={<Umbrella />} />
-                <Route path="/stationery" element={<Stationery />} />
-                <Route path="/bedding" element={<Bedding />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/" element={<Home pageTitle={'Home'} />} />
+                <Route path="/doll" element={<Doll pageTitle={'Doll'} />} />
+                <Route
+                    path="/umbrella"
+                    element={<Umbrella pageTitle={'Umbrella'} />}
+                />
+                <Route
+                    path="/stationery"
+                    element={<Stationery pageTitle={'Stationery'} />}
+                />
+                <Route
+                    path="/bedding"
+                    element={<Bedding pageTitle={'Bedding'} />}
+                />
+                <Route path="/cart" element={<Cart pageTitle={'Cart'} />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
-        </MainContainer>
+        </div>
     );
 }
