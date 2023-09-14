@@ -52,10 +52,10 @@ export default function NavbarMenu() {
             </NavMenuItems>
             <NavMenuItems
                 onClick={() => {
-                    navigate('/doll');
+                    navigate('/charm');
                 }}
             >
-                ぬいぐるみ
+                チャーム
             </NavMenuItems>
             <NavMenuItems
                 onClick={() => {

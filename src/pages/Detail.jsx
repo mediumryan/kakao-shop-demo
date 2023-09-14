@@ -10,7 +10,6 @@ import DetailDescription from '../components/Detail/DetailDescription';
 
 const DetailContents = styled.div`
     display: flex;
-    background-color: red;
     width: 80%;
     height: 65vh;
 `;
@@ -25,8 +24,8 @@ export default function Detail() {
         <Container>
             <Title>{detailItem.name}</Title>
             <DetailContents>
-                <DetailImg />
-                <DetailDescription />
+                <DetailImg item={detailItem} />
+                <DetailDescription item={detailItem} />
             </DetailContents>
         </Container>
     );

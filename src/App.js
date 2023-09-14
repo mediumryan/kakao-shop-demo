@@ -5,7 +5,7 @@ import MainNav from './components/Navbar/MainNav';
 import Footer from './components/Footer';
 // pages
 import Home from './pages/Home';
-import Doll from './pages/Doll';
+import Charm from './pages/Charm';
 import Umbrella from './pages/Umbrella';
 import Stationery from './pages/Stationery';
 import Bedding from './pages/Bedding';
@@ -38,7 +38,7 @@ export default function App() {
             <MainNav />
             <Routes>
                 <Route path="/" element={<Home pageTitle={'Home'} />} />
-                <Route path="/doll" element={<Doll pageTitle={'Doll'} />} />
+                <Route path="/charm" element={<Charm pageTitle={'Charm'} />} />
                 <Route
                     path="/umbrella"
                     element={<Umbrella pageTitle={'Umbrella'} />}
