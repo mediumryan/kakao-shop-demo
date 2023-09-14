@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
+// logo image
 import mainLogo from './../../images/main-logo.png';
 
 const NavTitle = styled.div`

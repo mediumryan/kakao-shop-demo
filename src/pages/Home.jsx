@@ -1,22 +1,23 @@
 import { styled } from 'styled-components';
 import { useRecoilValue } from 'recoil';
 // components
-import ItemCards from '../components/ItemCards';
-// styled-components
-import { SectionCardsContainer } from '../styled/common-section-style/SectionCards';
 // recoil
 import { allItem } from './../atom';
+import Card from '../components/Card/Card';
 
-export const SectionContainer = styled.div`
+export const Container = styled.div`
     position: relative;
     padding: calc(var(--padding-large) * 2);
-    padding-top: var(--padding-medium-large);
+    margin-top: calc(var(--margin-very-large) * 2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        margin-top: calc(var(--margin-very-large) * 3);
+    }
 `;
 
-export const SectionTitle = styled.h1`
+export const Title = styled.h1`
     font-size: var(--font-size-medium-large);
     font-weight: 700;
     margin-bottom: var(--margin-medium-large);
@@ -27,24 +28,30 @@ export const SectionTitle = styled.h1`
     }
 `;
 
+export const CardsContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--margin-medium-large);
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+`;
+
 const Home = () => {
     const all = useRecoilValue(allItem);
 
     return (
-        <SectionContainer>
-            <SectionTitle>page title</SectionTitle>
-            <SectionCardsContainer>
-                {all.map((HomeItem, homeIndex) => {
-                    return (
-                        <ItemCards
-                            item={HomeItem}
-                            key={HomeItem.id}
-                            index={homeIndex}
-                        />
-                    );
+        <Container>
+            <Title>page title</Title>
+            <CardsContainer>
+                {all.map((item, index) => {
+                    return <Card item={item} key={item.id} index={index} />;
                 })}
-            </SectionCardsContainer>
-        </SectionContainer>
+            </CardsContainer>
+        </Container>
     );
 };
 

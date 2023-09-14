@@ -1,5 +1,6 @@
-import { FaSortDown } from 'react-icons/fa';
 import { styled } from 'styled-components';
+// icons
+import { FaSortDown } from 'react-icons/fa';
 
 export const NavToggleBtn = styled(FaSortDown)`
     display: none;

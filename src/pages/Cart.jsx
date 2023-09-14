@@ -7,12 +7,12 @@ import {
     CartQuantityPrice,
     CartBuyBtn,
 } from '../styled/styled-cart/StyledCartContainer';
-import { SectionContainer, SectionTitle } from './Home';
+import { Container, Title } from './Home';
 
 const Cart = () => {
     return (
-        <SectionContainer>
-            <SectionTitle>カート</SectionTitle>
+        <Container>
+            <Title>カート</Title>
             <CartSelectDelAll>
                 <CartSelectAll>
                     <input type="checkbox" />
@@ -28,7 +28,7 @@ const Cart = () => {
                 </CartQuantityPrice>
                 <CartBuyBtn>購入する</CartBuyBtn>
             </CartBottom>
-        </SectionContainer>
+        </Container>
     );
 };
 

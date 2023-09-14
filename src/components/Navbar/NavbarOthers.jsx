@@ -1,8 +1,10 @@
-import { FaBell, FaRegUser, FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
+// recoil
 import { navMenuState } from '../../atom';
+// icons
+import { FaBell, FaRegUser, FaShoppingCart } from 'react-icons/fa';
 
 const NavOthers = styled.ul`
     display: flex;
