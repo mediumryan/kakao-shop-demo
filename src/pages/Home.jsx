@@ -18,6 +18,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
+    color: var(--accent-200);
     font-size: var(--font-size-medium-large);
     font-weight: 700;
     margin-bottom: var(--margin-medium-large);

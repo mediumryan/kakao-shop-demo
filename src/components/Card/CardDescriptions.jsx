@@ -5,7 +5,6 @@ const CardsDescription = styled.div`
     height: 120px;
     display: flex;
     align-items: center;
-    font-size: var(--font-size-micro);
     background: var(--bg-200);
     padding: var(--padding-medium-large);
     border-top: 2px solid var(--bg-100);
@@ -21,6 +20,7 @@ const CartName = styled.span`
     line-height: 1.5;
     flex-basis: 60%;
     margin-right: var(--margin-medium);
+    font-size: var(--font-size-micro);
     text-align: left;
 `;
 
@@ -28,6 +28,7 @@ const CartPrice = styled.span`
     color: var(--primary-100);
     flex-basis: 40%;
     text-align: center;
+    font-size: var(--font-size-small);
 `;
 
 export default function CardDescriptions({ item }) {

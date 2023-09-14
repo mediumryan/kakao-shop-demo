@@ -1,5 +1,5 @@
 import './css/index.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 // components
 import MainNav from './components/Navbar/MainNav';
 import Footer from './components/Footer';
@@ -12,8 +12,27 @@ import Bedding from './pages/Bedding';
 import Cart from './pages/Cart';
 import SignIn from './pages/SignIn';
 import NotFound from './pages/NotFound';
+import Detail from './pages/Detail';
+import { styled } from 'styled-components';
+import { FaBackward } from 'react-icons/fa';
+
+const GoBack = styled(FaBackward)`
+    position: fixed;
+    top: 22%;
+    left: 2%;
+    font-size: var(--font-size-small);
+    color: var(--primary-100);
+    transition: 300ms all;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+        opacity: 0.77;
+    }
+`;
 
 export default function App() {
+    const navigate = useNavigate();
+
     return (
         <div>
             <MainNav />
@@ -32,11 +51,17 @@ export default function App() {
                     path="/bedding"
                     element={<Bedding pageTitle={'Bedding'} />}
                 />
+                <Route path="detail/:id" element={<Detail />} />
                 <Route path="/cart" element={<Cart pageTitle={'Cart'} />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
+            <GoBack
+                onClick={() => {
+                    navigate(-1);
+                }}
+            />
         </div>
     );
 }

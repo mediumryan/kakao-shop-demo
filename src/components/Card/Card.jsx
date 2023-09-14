@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import CardDescriptions from './CardDescriptions';
 import CardImg from './CardImg';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const CardWrapper = styled(motion.div)`
     position: relative;
@@ -37,12 +38,17 @@ const cardVariants = {
 };
 
 export default function Card({ item, index }) {
+    const navigate = useNavigate();
+
     return (
         <AnimatePresence>
             <CardWrapper
                 variants={cardVariants}
                 initial="initial"
                 whileHover="hover"
+                onClick={() => {
+                    navigate(`/detail/${item.name}`);
+                }}
             >
                 <CardImg item={item} />
                 <CardDescriptions item={item} />
