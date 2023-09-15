@@ -10,7 +10,7 @@ const NavTitle = styled.div`
     h1 {
         color: var(--primary-100);
         font-size: var(--font-size-medium);
-        font-weight: 700;
+        font-weight: 800;
         @media only screen and (min-width: 320px) and (max-width: 768px) {
             display: none;
         }

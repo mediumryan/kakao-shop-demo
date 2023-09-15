@@ -19,7 +19,7 @@ const NavMenu = styled.ul`
 
 const NavMenuItems = styled.li`
     padding: var(--padding-small) var(--padding-medium);
-    font-weight: 700;
+    font-weight: 800;
     margin-right: var(--margin-micro);
     border-bottom: 1px solid transparent;
     transition: 300ms all;

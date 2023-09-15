@@ -3,7 +3,7 @@
 /* 가상선택자 */
 :root {
     /* color */
-    --primary-100: #645cbb;
+    --primary-100: #655dbb;
     --primary-200: #a084dc;
     --primary-300: #bface2;
     --accent-100: #ffd700;
@@ -38,22 +38,12 @@
     --padding-double-medium: 12px 24px;
     --padding-double-small: 8px 12px;
     /* font-family */
-    --font-family-default: 'GmarketSansMedium';
-}
-/* 폰트 */
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-        format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 body {
     position: relative;
-    font-family: var(--font-family-default);
+    font-family: 'Poppins', sans-serif;
 }
-
 .visible {
     display: flex;
 }

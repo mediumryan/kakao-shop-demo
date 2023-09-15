@@ -14,7 +14,7 @@ const NavOthers = styled.ul`
 const NavOthersItems = styled.li`
     color: var(--primary-100);
     padding: var(--padding-small) var(--padding-medium);
-    font-weight: 700;
+    font-weight: 800;
     margin-right: var(--margin-micro);
     border-bottom: 1px solid transparent;
     transition: 300ms all;
