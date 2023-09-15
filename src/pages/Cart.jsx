@@ -1,26 +1,34 @@
+import { styled } from 'styled-components';
+import CartAllSelector from '../components/Cart/CartAllSelector';
+import CartCards from '../components/Cart/CartCards';
 import {
-    CartCardsContainer,
-    CartSelectDelAll,
-    CartSelectAll,
-    CartDelBtn,
     CartBottom,
     CartQuantityPrice,
     CartBuyBtn,
 } from '../styled/styled-cart/StyledCartContainer';
 import { Container, Title } from './Home';
+import { useRecoilState } from 'recoil';
+import { cartState } from '../atom';
 
-const Cart = () => {
+const CartCardWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+`;
+
+const Cart = ({ pageTitle }) => {
+    const [cart, setCart] = useRecoilState(cartState);
+
     return (
         <Container>
-            <Title>カート</Title>
-            <CartSelectDelAll>
-                <CartSelectAll>
-                    <input type="checkbox" />
-                    <span>全て選択する (0)</span>
-                </CartSelectAll>
-                <CartDelBtn>選択した項目削除</CartDelBtn>
-            </CartSelectDelAll>
-            <CartCardsContainer>ㅗㅑ</CartCardsContainer>
+            <Title>{pageTitle}</Title>
+            <CartAllSelector />
+            <CartCardWrapper>
+                {cart.map((item) => {
+                    return <CartCards />;
+                })}
+            </CartCardWrapper>
             <CartBottom>
                 <CartQuantityPrice>
                     <span>全て : (0)コ</span>
