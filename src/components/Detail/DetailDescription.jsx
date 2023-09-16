@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
+import { cartState } from '../../atom';
 
 const DetailDescriptionWrapper = styled.div`
     flex-basis: 50%;
@@ -113,6 +115,21 @@ export default function DetailDescription({ item }) {
             setDetailCompleteState(false);
         }
     };
+    // Add cart item
+    const [cart, setCart] = useRecoilState(cartState);
+    const AddCart = () => {
+        const itemIndex = cart.findIndex((a) => a.id === item.id);
+        ToggleDetailComplete();
+        if (itemIndex === -1) {
+            setCart([...cart, item]);
+        } else {
+            const newCart = [...cart];
+            newCart[itemIndex].quantity++;
+            setCart(newCart);
+        }
+    };
+
+    console.log(cart);
 
     return (
         <DetailDescriptionWrapper>
@@ -128,7 +145,7 @@ export default function DetailDescription({ item }) {
             <br />
             <br />
             <br />
-            <AddTo onClick={ToggleDetailComplete}>カートに追加</AddTo>
+            <AddTo onClick={AddCart}>カートに追加</AddTo>
             <DetailComplete
                 visible={detailCompleteState}
                 onClick={ToggleDetailComplete}

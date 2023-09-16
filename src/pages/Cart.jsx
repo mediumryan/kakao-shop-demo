@@ -9,6 +9,7 @@ import {
 import { Container, Title } from './Home';
 import { useRecoilState } from 'recoil';
 import { cartState } from '../atom';
+import CartContentHeader from '../components/Cart/CartContentHeader';
 
 const CartCardWrapper = styled.div`
     display: flex;
@@ -25,8 +26,9 @@ const Cart = ({ pageTitle }) => {
             <Title>{pageTitle}</Title>
             <CartAllSelector />
             <CartCardWrapper>
+                <CartContentHeader />
                 {cart.map((item) => {
-                    return <CartCards />;
+                    return <CartCards key={item.id} item={item} />;
                 })}
             </CartCardWrapper>
             <CartBottom>

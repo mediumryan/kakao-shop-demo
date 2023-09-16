@@ -253,7 +253,7 @@ export const beddingItem = selector({
 // cart item
 export const cartState = atom({
     key: 'cart_items',
-    default: [1, 2, 3, 4],
+    default: [],
 });
 
 // nav menu toggle state
