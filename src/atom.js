@@ -16,6 +16,9 @@ import pillowRyan from './images/pillow-ryan.webp';
 import pillowChunsik from './images/pillow-chunsik.webp';
 import pillowAppeach from './images/pillow-appeach.webp';
 import pillowMuji from './images/pillow-muji.webp';
+import { recoilPersist } from 'recoil-persist';
+
+const { persistAtom } = recoilPersist();
 
 // shopping items
 export const allItem = atom({
@@ -216,6 +219,7 @@ export const allItem = atom({
             checked: false,
         },
     ],
+    effects_UNSTABLE: [persistAtom],
 });
 
 export const charmItem = selector({
@@ -254,6 +258,7 @@ export const beddingItem = selector({
 export const cartState = atom({
     key: 'cart_items',
     default: [],
+    effects_UNSTABLE: [persistAtom],
 });
 
 // nav menu toggle state

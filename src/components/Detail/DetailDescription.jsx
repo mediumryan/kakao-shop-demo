@@ -119,14 +119,17 @@ export default function DetailDescription({ item }) {
     const [cart, setCart] = useRecoilState(cartState);
     const AddCart = () => {
         const itemIndex = cart.findIndex((a) => a.id === item.id);
-        ToggleDetailComplete();
         if (itemIndex === -1) {
             setCart([...cart, item]);
         } else {
             const newCart = [...cart];
-            newCart[itemIndex].quantity++;
+            newCart[itemIndex] = {
+                ...newCart[itemIndex],
+                quantity: newCart[itemIndex].quantity + 1,
+            };
             setCart(newCart);
         }
+        ToggleDetailComplete();
     };
 
     console.log(cart);
