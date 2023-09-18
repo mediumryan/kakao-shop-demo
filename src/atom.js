@@ -20,6 +20,12 @@ import { recoilPersist } from 'recoil-persist';
 
 const { persistAtom } = recoilPersist();
 
+// nav menu toggle state
+export const navMenuState = atom({
+    key: 'nav_menu_state',
+    default: false,
+});
+
 // shopping items
 export const allItem = atom({
     key: 'all_item',
@@ -261,9 +267,9 @@ export const cartState = atom({
     effects_UNSTABLE: [persistAtom],
 });
 
-// nav menu toggle state
-
-export const navMenuState = atom({
-    key: 'nav_menu_state',
-    default: false,
+// checked cart item
+export const checkedCart = atom({
+    key: 'checked_cart_items',
+    default: [],
+    effects_UNSTABLE: [persistAtom],
 });

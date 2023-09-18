@@ -1,8 +1,9 @@
-import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
-import { allItem } from '../../atom';
 import CartQuantity from './CartQuantity';
 import { FaTrash } from 'react-icons/fa';
+import { useRecoilState } from 'recoil';
+import { cartState, checkedCart } from '../../atom';
+import { useState } from 'react';
 
 const CartCard = styled.tr`
     width: 75%;
@@ -70,6 +71,17 @@ const CartDelete = styled.button`
 `;
 
 export default function CartCards({ item }) {
+    const [cart, setCart] = useRecoilState(cartState);
+    const itemIndex = cart.findIndex((i) => i.id === item.id);
+    const deleteItem = () => {
+        const newCart = [...cart];
+        newCart.splice(itemIndex, 1);
+        setCart(newCart);
+    };
+
+    // checked
+    const [checked, setChecked] = useRecoilState(checkedCart);
+
     return (
         <CartCard>
             <CartContentsWrapper>
@@ -82,13 +94,15 @@ export default function CartCards({ item }) {
                 <CartName>{item.name}</CartName>
             </CartContentsWrapper>
             <CartContentsWrapper>
-                <CartQuantity />
+                <CartQuantity item={item} itemIndex={itemIndex} />
             </CartContentsWrapper>
             <CartContentsWrapper>
-                <CartPrice>{item.price}won</CartPrice>
+                <CartPrice>
+                    ￥{(item.price * item.quantity).toLocaleString()}
+                </CartPrice>
             </CartContentsWrapper>
             <CartContentsWrapper>
-                <CartDelete>
+                <CartDelete onClick={deleteItem}>
                     <FaTrash />
                 </CartDelete>
             </CartContentsWrapper>

@@ -1,5 +1,7 @@
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
+import { cartState } from '../../atom';
 
 const QuantityWrapper = styled.div`
     width: 100%;
@@ -23,14 +25,36 @@ const Quantity = styled.span`
     margin: 0 var(--margin-medium);
 `;
 
-export default function CartQuantity() {
+export default function CartQuantity({ item, itemIndex }) {
+    const [cart, setCart] = useRecoilState(cartState);
+    // plus and minus item
+    const plusCnt = () => {
+        const newCart = [...cart];
+        newCart[itemIndex] = {
+            ...newCart[itemIndex],
+            quantity: newCart[itemIndex].quantity + 1,
+        };
+        setCart(newCart);
+    };
+    const minusCnt = () => {
+        if (item.quantity < 2) {
+            alert('商品数が1個以下では設定できません。');
+        } else {
+            const newCart = [...cart];
+            newCart[itemIndex] = {
+                ...newCart[itemIndex],
+                quantity: newCart[itemIndex].quantity - 1,
+            };
+            setCart(newCart);
+        }
+    };
     return (
         <QuantityWrapper>
-            <PlusMinus>
+            <PlusMinus onClick={minusCnt}>
                 <FaMinusCircle />
             </PlusMinus>
-            <Quantity>1</Quantity>
-            <PlusMinus>
+            <Quantity>{item.quantity}</Quantity>
+            <PlusMinus onClick={plusCnt}>
                 <FaPlusCircle />
             </PlusMinus>
         </QuantityWrapper>
