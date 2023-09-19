@@ -13,6 +13,9 @@ const CartCard = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 100%;
+    }
 `;
 
 const CartContentsWrapper = styled.div`
@@ -47,6 +50,10 @@ const CartImgWrapper = styled.div`
         width: 50%;
         height: 50%;
         border-radius: 10px;
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            width: 75%;
+            height: 75%;
+        }
     }
 `;
 

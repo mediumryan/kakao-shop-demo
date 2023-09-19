@@ -29,6 +29,10 @@ export const CartSelectDelAll = styled.button`
     background-color: var(--bg-100);
     padding: var(--padding-double-micro);
     border-radius: 10px;
+    transition: 300ms all;
+    &:hover {
+        opacity: 0.75;
+    }
 `;
 
 export default function CartAllSelector() {

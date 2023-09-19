@@ -50,6 +50,12 @@ const buy_variants = {
             duration: 1,
         },
     },
+    hover: {
+        opacity: 0.75,
+        transition: {
+            duration: 0.3,
+        },
+    },
 };
 
 export default function CartBuy() {
@@ -73,6 +79,7 @@ export default function CartBuy() {
                         variants={buy_variants}
                         initial="initial"
                         animate="animate"
+                        whileHover="hover"
                     >
                         購入する
                     </CartBuyBtn>

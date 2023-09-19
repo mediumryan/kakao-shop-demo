@@ -15,6 +15,9 @@ const DetailDescriptionWrapper = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     position: relative;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        margin: var(--margin-medium) 0 0 0;
+    }
 `;
 
 const ItemCategory = styled.p`

@@ -19,7 +19,7 @@ import { FaBackward } from 'react-icons/fa';
 const GoBack = styled(FaBackward)`
     position: fixed;
     top: 22%;
-    left: 2%;
+    left: 3%;
     font-size: var(--font-size-small);
     color: var(--primary-100);
     transition: 300ms all;
@@ -27,6 +27,9 @@ const GoBack = styled(FaBackward)`
     &:hover {
         transform: scale(1.05);
         opacity: 0.77;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        top: 13.5%;
     }
 `;
 
@@ -62,6 +65,7 @@ export default function App() {
                     navigate(-1);
                 }}
             />
+            <Footer />
         </div>
     );
 }
