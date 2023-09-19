@@ -26,15 +26,15 @@ export const CartQuantityPrice = styled.div`
 `;
 
 export const CartBuyBtn = styled.button`
-    background: var(--color-1);
-    color: var(--color-5);
+    color: var(--bg-200);
+    background-color: var(--primary-100);
     font-size: var(--font-size-medium);
+    padding: var(--padding-double-medium);
     border-radius: 10px;
-    padding: var(--padding-micro) var(--padding-small);
     cursor: pointer;
+    transition: 300ms all;
     &:hover {
-        color: var(--color-1);
-        background-color: var(--color-5);
+        opacity: 0.75;
     }
 `;
 
@@ -49,7 +49,7 @@ export default function CartBuy() {
                 <>
                     <CartQuantityPrice>
                         <span>全て : ({quantity})コ</span>
-                        <span>価格 : ({price})円</span>
+                        <span>価格 : ({price.toLocaleString()})円</span>
                     </CartQuantityPrice>
                     <CartBuyBtn>購入する</CartBuyBtn>
                 </>

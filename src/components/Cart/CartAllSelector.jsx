@@ -1,4 +1,7 @@
+import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
+import { cartState } from '../../atom';
+import { useState } from 'react';
 
 const SelectAllWrapper = styled.div`
     display: flex;
@@ -29,13 +32,35 @@ export const CartSelectDelAll = styled.button`
 `;
 
 export default function CartAllSelector() {
+    const [cart, setCart] = useRecoilState(cartState);
+    const [toggleCheck, setToggleCheck] = useState(false);
+    const toggleAll = () => {
+        setToggleCheck((prev) => !prev);
+        const newCart = cart.map((item) => ({
+            ...item,
+            checked: !toggleCheck,
+        }));
+        setCart(newCart);
+    };
+
+    const deleteChecked = () => {
+        const newCart = cart.filter((i) => i.checked === false);
+        setCart(newCart);
+    };
+
     return (
         <SelectAllWrapper>
             <CartSelectAll>
-                <input type="checkbox" />
+                <input
+                    type="checkbox"
+                    value={toggleCheck}
+                    onChange={toggleAll}
+                />
                 <span> 全て選択</span>
             </CartSelectAll>
-            <CartSelectDelAll>選択した項目削除</CartSelectDelAll>
+            <CartSelectDelAll onClick={deleteChecked}>
+                選択した項目削除
+            </CartSelectDelAll>
         </SelectAllWrapper>
     );
 }
