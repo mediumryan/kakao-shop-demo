@@ -18,7 +18,7 @@ const DetailDescriptionWrapper = styled.div`
 `;
 
 const ItemCategory = styled.p`
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-medium);
 `;
 
 const Votes = styled.div`
@@ -31,8 +31,16 @@ const Vote = styled.div`
     width: 10px;
     height: 20px;
     border-radius: 2px;
-    background-color: var(--accent-200);
     margin-right: calc(var(--margin-micro) / 2);
+    background-color: ${(props) =>
+        props.vote_average >= props.index + 1
+            ? 'var(--accent-200)'
+            : 'var(--bg-300)'};
+`;
+
+const VoteCount = styled.span`
+    font-size: var(--font-size-small);
+    margin-left: var(--margin-medium);
 `;
 
 const ItemPrice = styled.p`
@@ -96,10 +104,14 @@ export default function DetailDescription({ item }) {
         <DetailDescriptionWrapper>
             <ItemCategory>種類：{item.category_jp}</ItemCategory>
             <Votes>
-                {vote_arr.map((item) => (
-                    <Vote />
+                {vote_arr.map((_, index) => (
+                    <Vote
+                        key={index}
+                        vote_average={item.vote_average}
+                        index={index}
+                    />
                 ))}
-                <span>({item.vote_average})</span>
+                <VoteCount>({item.vote_average})</VoteCount>
             </Votes>
             <ItemPrice>価格：{item.price.toLocaleString()}円</ItemPrice>
             <ItemDescription>{item.description}</ItemDescription>
