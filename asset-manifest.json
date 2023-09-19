@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kakao-shop-demo/static/css/main.6ecb9815.css",
-    "main.js": "/kakao-shop-demo/static/js/main.f63b1721.js",
+    "main.js": "/kakao-shop-demo/static/js/main.15aa4a21.js",
     "static/media/main-logo.png": "/kakao-shop-demo/static/media/main-logo.e209dfcbe6b50197ea60.png",
     "static/media/note-ryan-2.webp": "/kakao-shop-demo/static/media/note-ryan-2.2060a31af5b8bca97f93.webp",
     "static/media/note-ryan-5.webp": "/kakao-shop-demo/static/media/note-ryan-5.f891b2f641258d276ce4.webp",
@@ -21,10 +21,10 @@
     "static/media/pillow-appeach.webp": "/kakao-shop-demo/static/media/pillow-appeach.5ac30cbff446dab2df5a.webp",
     "index.html": "/kakao-shop-demo/index.html",
     "main.6ecb9815.css.map": "/kakao-shop-demo/static/css/main.6ecb9815.css.map",
-    "main.f63b1721.js.map": "/kakao-shop-demo/static/js/main.f63b1721.js.map"
+    "main.15aa4a21.js.map": "/kakao-shop-demo/static/js/main.15aa4a21.js.map"
   },
   "entrypoints": [
     "static/css/main.6ecb9815.css",
-    "static/js/main.f63b1721.js"
+    "static/js/main.15aa4a21.js"
   ]
 }
