@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-    display: none;
-    position: absolute;
+    display: block;
+    position: fixed;
     bottom: 0;
     line-height: 1.5;
-    padding: var(--padding-medium) calc(var(--padding-large) * 3);
-    background-color: var(--color-5);
-    opacity: 0.25;
+    padding: var(--padding-double-large);
+    background-color: var(--bg-200);
+    opacity: 0.05;
     cursor: default;
-    transition: var(--animation-duration) opacity;
+    transition: 300ms all;
     &:hover {
         opacity: 1;
+        z-index: 2;
     }
-    @media screen and (max-width: 413px) {
-        max-height: 40px;
-        overflow: scroll;
-        padding: var(--padding-medium) calc(var(--padding-large));
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        max-height: 80px;
+        overflow-y: scroll;
     }
 `;
 

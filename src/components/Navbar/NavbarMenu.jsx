@@ -7,12 +7,15 @@ import { navMenuState } from '../../atom';
 const NavMenu = styled.ul`
     display: flex;
     margin: 0 var(--margin-medium);
+    transform-origin: center top;
     transition: 300ms all;
     color: var(--primary-100);
+    z-index: 2;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        display: ${(props) => (props.visible ? 'flex' : 'none')};
+        display: ${(props) => (props.active ? 'flex' : 'none')};
         flex-direction: column;
         margin: 0;
+        padding-bottom: var(--padding-large);
         width: 100%;
     }
 `;
@@ -42,7 +45,7 @@ export default function NavbarMenu() {
     const navMenu = useRecoilValue(navMenuState);
 
     return (
-        <NavMenu visible={navMenu}>
+        <NavMenu active={navMenu}>
             <NavMenuItems
                 onClick={() => {
                     navigate('/');

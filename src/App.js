@@ -19,7 +19,7 @@ import { FaBackward } from 'react-icons/fa';
 const GoBack = styled(FaBackward)`
     position: fixed;
     top: 22%;
-    left: 3%;
+    left: 5%;
     font-size: var(--font-size-small);
     color: var(--primary-100);
     transition: 300ms all;
@@ -30,6 +30,10 @@ const GoBack = styled(FaBackward)`
     }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         top: 13.5%;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        top: 3.5%;
+        z-index: 10;
     }
 `;
 
