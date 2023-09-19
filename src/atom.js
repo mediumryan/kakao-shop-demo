@@ -267,9 +267,36 @@ export const cartState = atom({
     effects_UNSTABLE: [persistAtom],
 });
 
-// checked cart item
-export const checkedCart = atom({
+export const checked = selector({
     key: 'checked_cart_items',
-    default: [],
-    effects_UNSTABLE: [persistAtom],
+    get: ({ get }) => {
+        const cart = get(cartState);
+        return cart.filter((i) => i.checked === true);
+    },
+});
+
+export const checkedQuantity = selector({
+    key: 'cart_checked_quantity',
+    get: ({ get }) => {
+        const cart = get(cartState);
+        return cart.reduce((total, item) => {
+            if (item.checked) {
+                return total + item.quantity;
+            }
+            return total;
+        }, 0);
+    },
+});
+
+export const checkedPrice = selector({
+    key: 'cart_checked_price',
+    get: ({ get }) => {
+        const cart = get(cartState);
+        return cart.reduce((total, item) => {
+            if (item.checked) {
+                return total + item.quantity * item.price;
+            }
+            return total;
+        }, 0);
+    },
 });

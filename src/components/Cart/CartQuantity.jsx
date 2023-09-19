@@ -22,6 +22,7 @@ const PlusMinus = styled.button`
 
 const Quantity = styled.span`
     font-size: var(--font-size-small);
+    font-weight: 800;
     margin: 0 var(--margin-medium);
 `;
 

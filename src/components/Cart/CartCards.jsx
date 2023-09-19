@@ -2,10 +2,9 @@ import { styled } from 'styled-components';
 import CartQuantity from './CartQuantity';
 import { FaTrash } from 'react-icons/fa';
 import { useRecoilState } from 'recoil';
-import { cartState, checkedCart } from '../../atom';
-import { useState } from 'react';
+import { cartState } from '../../atom';
 
-const CartCard = styled.tr`
+const CartCard = styled.div`
     width: 75%;
     background-color: var(--bg-200);
     padding: var(--padding-double-medium);
@@ -58,7 +57,10 @@ const CartName = styled.p`
     text-align: left;
 `;
 
-const CartPrice = styled.span``;
+const CartPrice = styled.span`
+    letter-spacing: 2px;
+    font-weight: 800;
+`;
 
 const CartDelete = styled.button`
     color: var(--primary-100);
@@ -79,13 +81,24 @@ export default function CartCards({ item }) {
         setCart(newCart);
     };
 
-    // checked
-    const [checked, setChecked] = useRecoilState(checkedCart);
+    // checkbox
+    const toggleChecked = () => {
+        const newCart = [...cart];
+        newCart[itemIndex] = {
+            ...newCart[itemIndex],
+            checked: !newCart[itemIndex].checked,
+        };
+        setCart(newCart);
+    };
 
     return (
         <CartCard>
             <CartContentsWrapper>
-                <CartSelector type="checkbox" />
+                <CartSelector
+                    type="checkbox"
+                    checked={item.checked}
+                    onChange={toggleChecked}
+                />
             </CartContentsWrapper>
             <CartImgWrapper>
                 <img src={item.image_path} alt={item.name} />

@@ -1,6 +1,6 @@
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
-import { checkedCart } from '../../atom';
+import { checked, checkedPrice, checkedQuantity } from '../../atom';
 
 const CartBuyWrapper = styled.div`
     width: 100%;
@@ -39,15 +39,17 @@ export const CartBuyBtn = styled.button`
 `;
 
 export default function CartBuy() {
-    const [checked, setChecked] = useRecoilState(checkedCart);
+    const checkedCart = useRecoilValue(checked);
+    const quantity = useRecoilValue(checkedQuantity);
+    const price = useRecoilValue(checkedPrice);
 
     return (
         <CartBuyWrapper>
-            {checked.length > 0 && (
+            {checkedCart.length > 0 && (
                 <>
                     <CartQuantityPrice>
-                        <span>全て : (0)コ</span>
-                        <span>価格 : (0)円</span>
+                        <span>全て : ({quantity})コ</span>
+                        <span>価格 : ({price})円</span>
                     </CartQuantityPrice>
                     <CartBuyBtn>購入する</CartBuyBtn>
                 </>
