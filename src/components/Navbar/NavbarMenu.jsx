@@ -30,12 +30,12 @@ const NavMenuItems = styled.li`
     &:hover {
         border-bottom: 1px solid var(--primary-100);
     }
-    @media screen and (max-width: 413px) {
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
         text-align: center;
-        width: 100%;
+        width: 25%;
         padding: 0;
-        margin: 0;
-        padding-bottom: var(--padding-micro);
+        margin: 0 auto;
+        padding-bottom: var(--padding-medium);
         margin-bottom: var(--margin-medium);
     }
 `;

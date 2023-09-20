@@ -10,7 +10,7 @@ const MainNavContainer = styled.nav`
     align-items: center;
     padding: 0 var(--padding-medium-large) 0 var(--padding-large);
     border-bottom: 2px solid var(--bg-100);
-    background-color: var(--bg-200);
+    background-color: var(--bg-100);
     position: fixed;
     width: 100%;
     top: 0;

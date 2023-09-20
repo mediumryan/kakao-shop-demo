@@ -15,6 +15,8 @@ import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
 import { styled } from 'styled-components';
 import { FaBackward } from 'react-icons/fa';
+import { useRecoilState } from 'recoil';
+import { navMenuState } from './atom';
 
 const GoBack = styled(FaBackward)`
     position: fixed;
@@ -39,9 +41,16 @@ const GoBack = styled(FaBackward)`
 
 export default function App() {
     const navigate = useNavigate();
+    const [navMenu, setNavMenu] = useRecoilState(navMenuState);
+    const closeNavMenu = () => {
+        if (navMenu === true) {
+            setNavMenu(false);
+        }
+        return;
+    };
 
     return (
-        <div>
+        <div onClick={closeNavMenu}>
             <MainNav />
             <Routes>
                 <Route path="/" element={<Home pageTitle={'Home'} />} />
