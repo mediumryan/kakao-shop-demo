@@ -26,6 +26,7 @@ export const Title = styled.h1`
     font-style: italic;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         margin-top: calc(var(--margin-large) * 2);
+        line-height: 1.5;
     }
 `;
 

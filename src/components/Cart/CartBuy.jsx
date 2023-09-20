@@ -9,6 +9,10 @@ const CartBuyWrapper = styled(motion.div)`
     justify-content: space-between;
     align-items: center;
     margin-top: var(--margin-medium-large);
+    span {
+        color: var(--primary-100);
+        margin: 0 var(--margin-small);
+    }
 `;
 
 export const CartQuantityPrice = styled(motion.div)`
@@ -72,8 +76,12 @@ export default function CartBuy() {
                         initial="initial"
                         animate="animate"
                     >
-                        <span>全て : ({quantity})コ</span>
-                        <span>価格 : ({price.toLocaleString()})円</span>
+                        <p>
+                            全て : <span>{quantity}</span>コ
+                        </p>
+                        <p>
+                            価格 : <span>{price.toLocaleString()}</span>円
+                        </p>
                     </CartQuantityPrice>
                     <CartBuyBtn
                         variants={buy_variants}

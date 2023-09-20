@@ -18,6 +18,10 @@ export const CartSelectAll = styled.div`
     input {
         width: 20px;
         height: 20px;
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            width: 15px;
+            height: 15px;
+        }
     }
     span {
         cursor: default;

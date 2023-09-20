@@ -24,6 +24,9 @@ const Quantity = styled.span`
     font-size: var(--font-size-small);
     font-weight: 800;
     margin: 0 var(--margin-medium);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin: 0;
+    }
 `;
 
 export default function CartQuantity({ item, itemIndex }) {

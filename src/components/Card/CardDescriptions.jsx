@@ -14,6 +14,10 @@ const CardsDescription = styled.div`
     span {
         margin-bottom: var(--margin-medium);
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        flex-direction: column;
+        height: 100px;
+    }
 `;
 
 const CartName = styled.span`
@@ -21,7 +25,13 @@ const CartName = styled.span`
     flex-basis: 60%;
     margin-right: var(--margin-medium);
     font-size: var(--font-size-micro);
+    font-weight: 600;
     text-align: left;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 75%;
+        flex-basis: 75%;
+        margin: 0;
+    }
 `;
 
 const CartPrice = styled.span`
@@ -29,6 +39,10 @@ const CartPrice = styled.span`
     flex-basis: 40%;
     text-align: center;
     font-size: var(--font-size-small);
+    font-weight: 800;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        flex-basis: 25%;
+    }
 `;
 
 export default function CardDescriptions({ item }) {

@@ -16,6 +16,9 @@ const DetailContents = styled.div`
         flex-direction: column;
         width: 60%;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 export default function Detail() {

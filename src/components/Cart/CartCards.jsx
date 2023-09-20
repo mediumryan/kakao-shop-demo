@@ -16,6 +16,9 @@ const CartCard = styled.div`
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         width: 100%;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 const CartContentsWrapper = styled.div`
@@ -40,6 +43,10 @@ const CartContentsWrapper = styled.div`
 const CartSelector = styled.input`
     width: 20px;
     height: 20px;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 15px;
+        height: 15px;
+    }
 `;
 
 const CartImgWrapper = styled.div`
@@ -54,6 +61,10 @@ const CartImgWrapper = styled.div`
             width: 75%;
             height: 75%;
         }
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            width: 75%;
+            height: 75%;
+        }
     }
 `;
 
@@ -62,11 +73,16 @@ const CartName = styled.p`
     font-weight: 600;
     line-height: 1.5;
     text-align: left;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        line-height: 1.2;
+        margin: 0 var(--margin-micro);
+    }
 `;
 
 const CartPrice = styled.span`
     letter-spacing: 2px;
     font-weight: 800;
+    font-size: var(--font-size-medium);
 `;
 
 const CartDelete = styled.button`

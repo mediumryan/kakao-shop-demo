@@ -14,9 +14,9 @@ export const NavToggleBtn = styled(FaSortDown)`
     outline: none;
     font-size: 24px;
     transform: ${(props) =>
-        props.active ? 'rotate(360deg)' : 'rotate(180deg)'};
+        props.active ? 'rotate(180deg)' : 'rotate(360deg)'};
     transition: 300ms all linear;
-    @media screen and (max-width: 413px) {
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
         display: block;
     }
 `;
