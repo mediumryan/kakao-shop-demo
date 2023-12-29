@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
-// recoil
+// import states
 import { navMenuState } from '../../atom';
-// icons
-import { FaBell, FaRegUser, FaShoppingCart } from 'react-icons/fa';
+// import icons
+import { FaRegUser, FaShoppingCart } from 'react-icons/fa';
 
 const NavOthers = styled.ul`
     display: flex;
@@ -12,15 +12,16 @@ const NavOthers = styled.ul`
 `;
 
 const NavOthersItems = styled.li`
-    color: var(--primary-100);
-    padding: var(--padding-small) var(--padding-medium);
-    font-weight: 800;
-    margin-right: var(--margin-micro);
-    border-bottom: 1px solid transparent;
+    padding: 0.25rem 1rem;
+    margin-right: 0.25rem;
     transition: 300ms all;
     cursor: pointer;
+    a {
+        color: var(--black-200);
+        font-size: 1.25rem;
+    }
     &:hover {
-        border-bottom: 1px solid var(--primary-100);
+        transform: scale(1.15);
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         display: ${(props) => (props.visible ? 'flex' : 'none')};
@@ -29,27 +30,19 @@ const NavOthersItems = styled.li`
 `;
 
 export default function NavbarOthers() {
-    const navigate = useNavigate();
     const navMenu = useRecoilValue(navMenuState);
 
     return (
         <NavOthers visible={navMenu}>
             <NavOthersItems>
-                <FaBell />
+                <Link to="/cart">
+                    <FaShoppingCart />
+                </Link>
             </NavOthersItems>
-            <NavOthersItems
-                onClick={() => {
-                    navigate('/cart');
-                }}
-            >
-                <FaShoppingCart />
-            </NavOthersItems>
-            <NavOthersItems
-                onClick={() => {
-                    navigate('/sign-in');
-                }}
-            >
-                <FaRegUser />
+            <NavOthersItems>
+                <Link to="sign-in">
+                    <FaRegUser />
+                </Link>
             </NavOthersItems>
         </NavOthers>
     );

@@ -8,7 +8,7 @@ import Card from '../components/Card/Card';
 export const Container = styled.div`
     position: relative;
     padding: calc(var(--padding-large) * 2);
-    margin-top: calc(var(--margin-very-large) * 2);
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

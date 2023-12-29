@@ -1,36 +1,21 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-const NavTitle = styled.div`
+const NavTitle = styled(Link)`
     display: flex;
     align-items: center;
+    color: var(--accent-100);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'DotGothic16', sans-serif;
+    letter-spacing: 4px;
+    margin-right: 2rem;
     cursor: pointer;
-    h1 {
-        color: var(--primary-100);
-        font-size: var(--font-size-medium);
-        font-weight: 800;
-        font-family: 'DotGothic16', sans-serif;
-        @media only screen and (min-width: 320px) and (max-width: 768px) {
-            display: none;
-        }
-    }
-    img {
-        height: 120px;
-        @media only screen and (min-width: 320px) and (max-width: 768px) {
-            height: 80px;
-        }
-    }
 `;
 
 export default function NavBarTitle() {
-    const navigate = useNavigate();
-
     return (
-        <NavTitle
-            onClick={() => {
-                navigate('/');
-            }}
-        >
+        <NavTitle to="/">
             <h1>Ryan Shop</h1>
         </NavTitle>
     );
