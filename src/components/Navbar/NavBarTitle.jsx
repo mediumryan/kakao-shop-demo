@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
-// logo image
-import mainLogo from './../../images/main-logo.png';
 
 const NavTitle = styled.div`
     display: flex;
@@ -11,6 +9,7 @@ const NavTitle = styled.div`
         color: var(--primary-100);
         font-size: var(--font-size-medium);
         font-weight: 800;
+        font-family: 'DotGothic16', sans-serif;
         @media only screen and (min-width: 320px) and (max-width: 768px) {
             display: none;
         }
@@ -33,7 +32,6 @@ export default function NavBarTitle() {
             }}
         >
             <h1>Ryan Shop</h1>
-            <img src={mainLogo} alt="カカオのロゴイメージです。" />
         </NavTitle>
     );
 }
