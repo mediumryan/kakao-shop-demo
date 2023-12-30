@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/kakao-shop-demo/static/css/main.8375f789.css",
-    "main.js": "/kakao-shop-demo/static/js/main.c56bff67.js",
-    "static/media/main-logo.png": "/kakao-shop-demo/static/media/main-logo.e209dfcbe6b50197ea60.png",
+    "main.css": "/kakao-shop-demo/static/css/main.78325301.css",
+    "main.js": "/kakao-shop-demo/static/js/main.1b4845ea.js",
     "static/media/note-ryan-2.webp": "/kakao-shop-demo/static/media/note-ryan-2.2060a31af5b8bca97f93.webp",
     "static/media/note-ryan-5.webp": "/kakao-shop-demo/static/media/note-ryan-5.f891b2f641258d276ce4.webp",
     "static/media/umb-ryan-3.webp": "/kakao-shop-demo/static/media/umb-ryan-3.bbc190defb5f697cfd03.webp",
@@ -20,11 +19,11 @@
     "static/media/pillow-muji.webp": "/kakao-shop-demo/static/media/pillow-muji.cf93cfa189a22e4dcf84.webp",
     "static/media/pillow-appeach.webp": "/kakao-shop-demo/static/media/pillow-appeach.5ac30cbff446dab2df5a.webp",
     "index.html": "/kakao-shop-demo/index.html",
-    "main.8375f789.css.map": "/kakao-shop-demo/static/css/main.8375f789.css.map",
-    "main.c56bff67.js.map": "/kakao-shop-demo/static/js/main.c56bff67.js.map"
+    "main.78325301.css.map": "/kakao-shop-demo/static/css/main.78325301.css.map",
+    "main.1b4845ea.js.map": "/kakao-shop-demo/static/js/main.1b4845ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.8375f789.css",
-    "static/js/main.c56bff67.js"
+    "static/css/main.78325301.css",
+    "static/js/main.1b4845ea.js"
   ]
 }
