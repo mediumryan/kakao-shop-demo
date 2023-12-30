@@ -20,7 +20,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
     color: var(--accent-200);
     font-size: var(--font-size-medium-large);
-    font-weight: 800;
+    font-family: 'DotGothic16', sans-serif;
     margin-bottom: var(--margin-medium-large);
     letter-spacing: 4px;
     font-style: italic;

@@ -22,6 +22,7 @@ const NavMenuItems = styled.li`
     margin-right: 0.5rem;
     cursor: pointer;
     a {
+        font-family: 'DotGothic16', sans-serif;
         text-decoration: none;
         color: var(--black-200);
         padding-bottom: 0.25rem;
