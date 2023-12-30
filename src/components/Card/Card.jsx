@@ -6,19 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 const CardWrapper = styled(motion.div)`
     position: relative;
-    margin: var(--margin-small);
-    margin-bottom: var(--margin-medium-large);
-    border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     cursor: pointer;
-`;
-
-const CardIndex = styled.span`
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    color: var(--primary-200);
-    cursor: default;
 `;
 
 const cardVariants = {
@@ -37,7 +26,7 @@ const cardVariants = {
     },
 };
 
-export default function Card({ item, index }) {
+export default function Card({ item }) {
     const navigate = useNavigate();
 
     return (
@@ -52,7 +41,6 @@ export default function Card({ item, index }) {
             >
                 <CardImg item={item} />
                 <CardDescriptions item={item} />
-                <CardIndex>{index + 1}</CardIndex>
             </CardWrapper>
         </AnimatePresence>
     );

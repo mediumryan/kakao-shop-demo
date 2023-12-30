@@ -9,6 +9,10 @@ import { FaRegUser, FaShoppingCart } from 'react-icons/fa';
 const NavOthers = styled.ul`
     display: flex;
     margin-left: auto;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        display: ${(props) => (props.toggled ? 'flex' : 'none')};
+        margin: 1rem auto;
+    }
 `;
 
 const NavOthersItems = styled.li`
@@ -23,17 +27,13 @@ const NavOthersItems = styled.li`
     &:hover {
         transform: scale(1.15);
     }
-    @media only screen and (min-width: 320px) and (max-width: 768px) {
-        display: ${(props) => (props.visible ? 'flex' : 'none')};
-        margin: var(--margin-medium) auto;
-    }
 `;
 
 export default function NavbarOthers() {
     const navMenu = useRecoilValue(navMenuState);
 
     return (
-        <NavOthers visible={navMenu}>
+        <NavOthers toggled={navMenu}>
             <NavOthersItems>
                 <Link to="/cart">
                     <FaShoppingCart />

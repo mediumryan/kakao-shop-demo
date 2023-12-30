@@ -14,7 +14,7 @@ export const NavToggleBtn = styled(FaSortDown)`
     outline: none;
     font-size: 24px;
     transform: ${(props) =>
-        props.active ? 'rotate(180deg)' : 'rotate(360deg)'};
+        props.toggled ? 'rotate(180deg)' : 'rotate(360deg)'};
     transition: 300ms all linear;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         display: block;
@@ -28,5 +28,5 @@ export default function NavbarToggle() {
         setToggle((prev) => !prev);
     };
 
-    return <NavToggleBtn onClick={toggleNavMenu} active={toggle} />;
+    return <NavToggleBtn onClick={toggleNavMenu} toggled={toggle} />;
 }

@@ -30,8 +30,8 @@ export const Title = styled.h1`
 
 export const CardsContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: var(--margin-medium-large);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2rem;
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
     }
