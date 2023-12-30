@@ -7,8 +7,8 @@ import Card from '../components/Card/Card';
 
 export const Container = styled.div`
     position: relative;
-    padding: calc(var(--padding-large) * 2);
     margin-top: 5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,13 +19,11 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
     color: var(--accent-200);
-    font-size: var(--font-size-medium-large);
+    font-size: 1.75rem;
     font-family: 'DotGothic16', sans-serif;
-    margin-bottom: var(--margin-medium-large);
+    margin: 2.5rem 0;
     letter-spacing: 4px;
-    font-style: italic;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        margin-top: calc(var(--margin-large) * 2);
         line-height: 1.5;
     }
 `;

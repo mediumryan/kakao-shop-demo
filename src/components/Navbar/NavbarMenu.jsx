@@ -12,7 +12,6 @@ const NavMenu = styled.ul`
         display: ${(props) => (props.active ? 'flex' : 'none')};
         flex-direction: column;
         margin: 0;
-        padding-bottom: var(--padding-large);
         width: 100%;
     }
 `;
@@ -36,11 +35,8 @@ const NavMenuItems = styled.li`
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         text-align: center;
-        width: 25%;
-        padding: 0;
-        margin: 0 auto;
-        padding-bottom: var(--padding-medium);
-        margin-bottom: var(--margin-medium);
+        padding: 0.5rem 0;
+        margin: 0.25rem auto;
     }
 `;
 

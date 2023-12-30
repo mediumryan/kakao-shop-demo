@@ -18,6 +18,7 @@ export const NavToggleBtn = styled(FaSortDown)`
     transition: 300ms all linear;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         display: block;
+        top: 36px;
     }
 `;
 

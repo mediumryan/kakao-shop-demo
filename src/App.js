@@ -1,9 +1,11 @@
 import './css/index.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-// components
+import { useRecoilState } from 'recoil';
+import { styled } from 'styled-components';
+// import components
 import MainNav from './components/Navbar/MainNav';
 import Footer from './components/Footer';
-// pages
+// import pages
 import Home from './pages/Home';
 import Charm from './pages/Charm';
 import Umbrella from './pages/Umbrella';
@@ -13,34 +15,35 @@ import Cart from './pages/Cart';
 import SignIn from './pages/SignIn';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
-import { styled } from 'styled-components';
+// import icons
 import { FaBackward } from 'react-icons/fa';
-import { useRecoilState } from 'recoil';
+// import state data
 import { navMenuState } from './atom';
+
+const MainWrapper = styled.main`
+    position: relative;
+`;
 
 const GoBack = styled(FaBackward)`
     position: fixed;
-    top: 22%;
+    top: 15%;
     left: 5%;
-    font-size: var(--font-size-small);
-    color: var(--primary-100);
+    font-size: 1.25rem;
+    color: var(--accent-300);
     transition: 300ms all;
     cursor: pointer;
+    z-index: 3;
     &:hover {
-        transform: scale(1.05);
-        opacity: 0.77;
-    }
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        top: 13.5%;
+        color: var(--accent-100);
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        top: 3.5%;
-        z-index: 10;
+        top: 5%;
     }
 `;
 
 export default function App() {
     const navigate = useNavigate();
+
     const [navMenu, setNavMenu] = useRecoilState(navMenuState);
     const closeNavMenu = () => {
         if (navMenu === true) {
@@ -50,8 +53,13 @@ export default function App() {
     };
 
     return (
-        <div onClick={closeNavMenu}>
+        <MainWrapper onClick={closeNavMenu}>
             <MainNav />
+            <GoBack
+                onClick={() => {
+                    navigate(-1);
+                }}
+            />
             <Routes>
                 <Route path="/" element={<Home pageTitle={'Home'} />} />
                 <Route path="/charm" element={<Charm pageTitle={'Charm'} />} />
@@ -73,12 +81,6 @@ export default function App() {
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
-            <GoBack
-                onClick={() => {
-                    navigate(-1);
-                }}
-            />
-            <Footer />
-        </div>
+        </MainWrapper>
     );
 }

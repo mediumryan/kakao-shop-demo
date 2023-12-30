@@ -11,6 +11,10 @@ const NavTitle = styled(Link)`
     letter-spacing: 4px;
     margin-right: 2rem;
     cursor: pointer;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 1rem 0;
+        margin: 0.5rem 0;
+    }
 `;
 
 export default function NavBarTitle() {
