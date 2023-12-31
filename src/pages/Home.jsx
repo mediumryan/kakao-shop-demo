@@ -12,9 +12,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        margin-top: calc(var(--margin-very-large) * 3);
-    }
 `;
 
 export const Title = styled.h1`
@@ -22,9 +19,13 @@ export const Title = styled.h1`
     font-size: 1.75rem;
     font-family: 'DotGothic16', sans-serif;
     margin: 2.5rem 0 4rem 0;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         line-height: 1.5;
+        margin-top: 5rem;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0 2.5rem;
     }
 `;
 

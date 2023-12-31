@@ -22,7 +22,7 @@ const CardsDescription = styled.div`
 
 const CartName = styled.span`
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.75;
     letter-spacing: 1px;
     font-weight: 500;
     text-align: center;

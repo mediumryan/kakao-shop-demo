@@ -14,19 +14,25 @@ const DetailDescriptionWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        margin: var(--margin-medium) 0 0 0;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 2.5rem;
     }
 `;
 
 const DetailSubTitle = styled.p`
     width: 90px;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 75px;
+    }
 `;
 
 const DetailItem = styled.p`
     font-size: 1.25rem;
     font-weight: 700;
     display: flex;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
 `;
 
 const ItemDescription = styled.p`
@@ -36,6 +42,9 @@ const ItemDescription = styled.p`
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 1.5px;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
 `;
 
 const Votes = styled.div`
@@ -75,6 +84,10 @@ const AddTo = styled.button`
         transform: scale(1.05);
         color: var(--accent-100);
         background-color: var(--accent-300);
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 1rem;
+        width: 75%;
     }
 `;
 

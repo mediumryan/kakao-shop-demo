@@ -12,12 +12,10 @@ const DetailContents = styled.div`
     display: flex;
     width: 80%;
     height: 65vh;
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        flex-direction: column;
-        width: 60%;
-    }
+    padding: 0 0 5rem 0;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         flex-direction: column;
+        height: 100%;
     }
 `;
 

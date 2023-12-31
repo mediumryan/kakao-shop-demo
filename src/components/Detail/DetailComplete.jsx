@@ -8,12 +8,15 @@ const DetailCompleteWrapper = styled.div`
     top: 0%;
     left: -50%;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     color: var(--white-100);
     font-size: 1.5rem;
     display: ${(props) => (props.visible ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        left: 0;
+    }
 `;
 
 const DetailCompleteInner = styled.div`
@@ -25,6 +28,15 @@ const DetailCompleteInner = styled.div`
         top: 5rem;
         width: 100%;
         text-align: center;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 2rem;
+        p {
+            width: 75%;
+        }
     }
 `;
 
@@ -44,6 +56,10 @@ const GoToCart = styled.button`
     &:hover {
         color: var(--white-100);
         background-color: var(--black-100);
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 1rem;
+        width: 75%;
     }
 `;
 

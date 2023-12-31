@@ -12,6 +12,10 @@ const DetailImgWrapper = styled.div`
         width: 100%;
         height: 100%;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin: 0;
+        margin-bottom: 5rem;
+    }
 `;
 
 export default function DetailImg({ item }) {
