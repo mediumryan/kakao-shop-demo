@@ -2,12 +2,12 @@ import { styled } from 'styled-components';
 
 const DetailImgWrapper = styled.div`
     flex-basis: 50%;
-    color: white;
-    margin: var(--margin-medium);
-    margin-right: calc(var(--margin-medium) / 2);
-    border: 2px solid var(--bg-100);
+    margin-right: 5rem;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     img {
         width: 100%;
         height: 100%;
@@ -18,7 +18,6 @@ export default function DetailImg({ item }) {
     return (
         <DetailImgWrapper>
             <img src={item.image_path} alt={item.name} />
-            gu
         </DetailImgWrapper>
     );
 }

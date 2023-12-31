@@ -20,56 +20,62 @@ const DetailDescriptionWrapper = styled.div`
     }
 `;
 
-const ItemCategory = styled.p`
-    font-size: var(--font-size-medium);
+const DetailSubTitle = styled.p`
+    width: 90px;
+`;
+
+const DetailItem = styled.p`
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+`;
+
+const ItemDescription = styled.p`
+    color: var(--black-200);
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
 `;
 
 const Votes = styled.div`
     display: flex;
     align-items: center;
-    font-size: var(--font-size-small);
+    margin-bottom: 10rem;
 `;
 
 const Vote = styled.div`
     width: 10px;
     height: 20px;
     border-radius: 2px;
-    margin-right: calc(var(--margin-micro) / 2);
+    margin-right: 2px;
     background-color: ${(props) =>
         props.vote_average >= props.index + 1
-            ? 'var(--accent-200)'
-            : 'var(--bg-300)'};
+            ? 'var(--accent-100)'
+            : 'var(--accent-300)'};
 `;
 
 const VoteCount = styled.span`
-    font-size: var(--font-size-small);
-    margin-left: var(--margin-medium);
-`;
-
-const ItemPrice = styled.p`
-    font-size: var(--font-size-small);
-`;
-
-const ItemDescription = styled.p`
-    color: var(--text-200);
-    font-size: var(--font-size-medium);
-    font-style: italic;
-    font-weight: 600;
-    margin: var(--margin-medium) 0;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    color: var(--black-200);
+    margin-left: 0.5rem;
 `;
 
 const AddTo = styled.button`
-    background-color: var(--accent-100);
-    border: 2px solid var(--accent-200);
-    border-radius: 4px;
-    font-size: var(--font-size-small);
-    font-weight: 800;
-    padding: var(--padding-double-medium);
+    background-color: var(--white-200);
+    color: var(--black-200);
+    width: 50%;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.25rem 0;
+    margin: 0 auto;
     transition: 150ms all;
     &:hover {
         transform: scale(1.05);
-        opacity: 0.75;
+        color: var(--accent-100);
+        background-color: var(--accent-300);
     }
 `;
 
@@ -77,7 +83,7 @@ export default function DetailDescription({ item }) {
     const vote_arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const [detailCompleteState, setDetailCompleteState] = useState(false);
     const ToggleDetailComplete = () => {
-        if (detailCompleteState === false) {
+        if (!detailCompleteState) {
             setDetailCompleteState(true);
             setTimeout(() => {
                 setDetailCompleteState(false);
@@ -105,7 +111,14 @@ export default function DetailDescription({ item }) {
 
     return (
         <DetailDescriptionWrapper>
-            <ItemCategory>種類：{item.category_jp}</ItemCategory>
+            <DetailItem>
+                <DetailSubTitle>カテゴリ</DetailSubTitle>: {item.category_jp}
+            </DetailItem>
+            <DetailItem>
+                <DetailSubTitle>価格</DetailSubTitle>:
+                {item.price.toLocaleString()}円
+            </DetailItem>
+            <ItemDescription>{item.description}</ItemDescription>
             <Votes>
                 {vote_arr.map((_, index) => (
                     <Vote
@@ -116,11 +129,6 @@ export default function DetailDescription({ item }) {
                 ))}
                 <VoteCount>({item.vote_average})</VoteCount>
             </Votes>
-            <ItemPrice>価格：{item.price.toLocaleString()}円</ItemPrice>
-            <ItemDescription>{item.description}</ItemDescription>
-            <br />
-            <br />
-            <br />
             <AddTo onClick={AddCart}>カートに追加</AddTo>
             <DetailComplete
                 detailCompleteState={detailCompleteState}

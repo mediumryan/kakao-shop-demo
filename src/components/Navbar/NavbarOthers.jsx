@@ -23,6 +23,9 @@ const NavOthersItems = styled.li`
     a {
         color: var(--black-200);
         font-size: 1.25rem;
+        &:hover {
+            color: var(--black-100);
+        }
     }
     &:hover {
         transform: scale(1.15);

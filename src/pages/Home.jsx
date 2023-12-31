@@ -21,7 +21,7 @@ export const Title = styled.h1`
     color: var(--accent-200);
     font-size: 1.75rem;
     font-family: 'DotGothic16', sans-serif;
-    margin: 2.5rem 0;
+    margin: 2.5rem 0 4rem 0;
     letter-spacing: 4px;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         line-height: 1.5;
