@@ -5,11 +5,15 @@ const CardsDescription = styled.div`
     height: 120px;
     display: flex;
     align-items: center;
-    background: var(--white-200);
+    font-size: 0.9rem;
     padding: 1rem 1.5rem;
-    span {
-        margin-bottom: var(--margin-medium);
-    }
+    color: var(--accent-100);
+    background: rgba(191, 172, 226, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    margin-bottom: var(--margin-medium);
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         flex-direction: column;
         height: 100px;

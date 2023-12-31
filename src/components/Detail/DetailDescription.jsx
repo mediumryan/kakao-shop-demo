@@ -5,16 +5,15 @@ import { cartState } from '../../atom';
 import DetailComplete from './DetailComplete';
 
 const DetailDescriptionWrapper = styled.div`
+    position: relative;
     flex-basis: 50%;
-    background-color: var(--bg-200);
     margin: var(--margin-medium);
-    margin-left: calc(var(--margin-medium) / 2);
-    padding: var(--padding-double-large);
+    padding: 1rem 2rem;
+    border: 2px solid var(--white-200);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    position: relative;
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         margin: var(--margin-medium) 0 0 0;
     }
@@ -66,7 +65,7 @@ const AddTo = styled.button`
     background-color: var(--white-200);
     color: var(--black-200);
     width: 50%;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1.25rem;
     font-weight: 700;
     padding: 0.25rem 0;

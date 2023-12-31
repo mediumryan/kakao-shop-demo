@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 const CardWrapper = styled(motion.div)`
     position: relative;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     cursor: pointer;
+    border-radius: 10px;
+    border-left: 0.5px solid var(--accent-300);
+    border-right: 0.5px solid var(--accent-300);
 `;
 
 const cardVariants = {
