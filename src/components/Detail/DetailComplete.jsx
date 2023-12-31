@@ -6,43 +6,53 @@ const DetailCompleteWrapper = styled.div`
     width: 100%;
     height: 100%;
     top: 0%;
-    left: 0%;
+    left: -50%;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: var(--bg-300);
-    font-size: var(--font-size-medium-large);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: var(--white-100);
+    font-size: 1.5rem;
     display: ${(props) => (props.visible ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 0 var(--padding-medium-large);
+`;
+
+const DetailCompleteInner = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
     p {
-        font-size: var(--font-size-medium-large);
-        margin-bottom: var(--margin-medium);
+        position: absolute;
+        top: 5rem;
+        width: 100%;
+        text-align: center;
     }
 `;
 
 const GoToCart = styled.button`
-    color: var(--primary-300);
-    background-color: var(--primary-100);
-    font-size: var(--font-size-medium);
-    font-weight: 600;
-    margin-top: var(--margin-medium-large);
-    padding: var(--padding-double-medium);
-    border-radius: 4px;
+    position: absolute;
+    width: 50%;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white-200);
+    background-color: var(--black-200);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    border-radius: 10px;
     transition: 150ms all;
     &:hover {
-        transform: scale(1.05);
-        opacity: 0.75;
+        color: var(--white-100);
+        background-color: var(--black-100);
     }
 `;
 
 const DetailClose = styled.button`
     position: absolute;
-    top: 2%;
-    right: 2%;
-    font-size: var(--font-size-small);
-    color: var(--bg-300);
+    top: 10px;
+    right: 10px;
+    font-size: 1.25rem;
+    color: var(--white-200);
 `;
 
 export default function DetailComplete({
@@ -56,15 +66,17 @@ export default function DetailComplete({
             visible={detailCompleteState}
             onClick={ToggleDetailComplete}
         >
-            <p>商品がカートに追加されました。</p>
-            <GoToCart
-                onClick={() => {
-                    navigate('/cart');
-                }}
-            >
-                My カート確認
-            </GoToCart>
-            <DetailClose onClick={ToggleDetailComplete}>X</DetailClose>
+            <DetailCompleteInner>
+                <p>商品がカートに追加されました。</p>
+                <GoToCart
+                    onClick={() => {
+                        navigate('/cart');
+                    }}
+                >
+                    My カート確認
+                </GoToCart>
+                <DetailClose onClick={ToggleDetailComplete}>X</DetailClose>
+            </DetailCompleteInner>
         </DetailCompleteWrapper>
     );
 }
