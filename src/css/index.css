@@ -12,7 +12,8 @@
     --black-200: #888;
 }
 
-body {
+body,
+button {
     font-family: 'M PLUS 1p', sans-serif;
 }
 

@@ -8,10 +8,13 @@ import Card from '../components/Card/Card';
 export const Container = styled.div`
     position: relative;
     margin-top: 5rem;
-    padding: 2rem;
+    padding: 2rem 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 2rem;
+    }
 `;
 
 export const Title = styled.h1`
@@ -31,7 +34,7 @@ export const Title = styled.h1`
 
 export const CardsContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);

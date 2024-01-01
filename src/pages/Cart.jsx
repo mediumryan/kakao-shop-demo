@@ -1,30 +1,15 @@
-import { styled } from 'styled-components';
-import CartAllSelector from '../components/Cart/CartAllSelector';
-import CartCards from '../components/Cart/CartCards';
+// import components
 import { Container, Title } from './Home';
-import { useRecoilValue } from 'recoil';
-import { cartState } from '../atom';
 import CartBuy from '../components/Cart/CartBuy';
-
-const CartCardWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-`;
+import CartAllSelector from '../components/Cart/CartAll';
+import CartItemList from '../components/Cart/CartItemList';
 
 const Cart = ({ pageTitle }) => {
-    const cart = useRecoilValue(cartState);
-
     return (
         <Container>
             <Title>{pageTitle}</Title>
             <CartAllSelector />
-            <CartCardWrapper>
-                {cart.map((item) => {
-                    return <CartCards key={item.id} item={item} />;
-                })}
-            </CartCardWrapper>
+            <CartItemList />
             <CartBuy />
         </Container>
     );

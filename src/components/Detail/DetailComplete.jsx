@@ -14,6 +14,7 @@ const DetailCompleteWrapper = styled.div`
     display: ${(props) => (props.visible ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
+    z-index: 999;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         left: 0;
     }
