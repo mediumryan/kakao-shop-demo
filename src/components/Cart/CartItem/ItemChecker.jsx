@@ -6,11 +6,11 @@ import { cartState } from '../../../atom';
 import { CartItemContents } from './CartItem';
 
 const Checker = styled.input`
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
     }
 `;
 
@@ -28,7 +28,7 @@ export default function ItemChecker({ item, itemIndex }) {
     };
 
     return (
-        <CartItemContents>
+        <CartItemContents style={{ flexBasis: '10%' }}>
             <Checker
                 type="checkbox"
                 checked={item.checked}

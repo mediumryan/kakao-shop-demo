@@ -7,8 +7,8 @@ const CartAllWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 85%;
-    font-size: 0.9rem;
+    width: 100%;
+    font-size: 1.25rem;
     font-weight: 500;
     letter-spacing: 1px;
     margin: 1rem 0 3rem 0;

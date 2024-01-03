@@ -20,10 +20,8 @@ const DetailDescriptionWrapper = styled.div`
 `;
 
 const DetailSubTitle = styled.p`
-    width: 90px;
-    @media only screen and (min-width: 320px) and (max-width: 768px) {
-        width: 75px;
-    }
+    margin-right: 0.5rem;
+    margin-bottom: 2rem;
 `;
 
 const DetailItem = styled.p`
@@ -50,7 +48,8 @@ const ItemDescription = styled.p`
 const Votes = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
 `;
 
 const Vote = styled.div`
@@ -124,10 +123,11 @@ export default function DetailDescription({ item }) {
     return (
         <DetailDescriptionWrapper>
             <DetailItem>
-                <DetailSubTitle>カテゴリ</DetailSubTitle>: {item.category_jp}
+                <DetailSubTitle>カテゴリ :</DetailSubTitle>
+                {item.category_jp}
             </DetailItem>
             <DetailItem>
-                <DetailSubTitle>価格</DetailSubTitle>:
+                <DetailSubTitle>商品単価 :</DetailSubTitle>
                 {item.price.toLocaleString()}円
             </DetailItem>
             <ItemDescription>{item.description}</ItemDescription>

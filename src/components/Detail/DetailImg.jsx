@@ -19,6 +19,9 @@ const DetailSliderItem = styled.div`
     height: 100%;
     img {
         max-width: 66%;
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            max-width: 95%;
+        }
     }
 `;
 

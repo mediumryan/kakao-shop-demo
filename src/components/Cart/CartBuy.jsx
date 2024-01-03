@@ -1,42 +1,51 @@
 import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
-import { checked, checkedPrice, checkedQuantity } from '../../atom';
 import { motion } from 'framer-motion';
+// import state data
+import { checked, checkedPrice, checkedQuantity } from '../../atom';
 
 const CartBuyWrapper = styled(motion.div)`
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    width: 480px;
+    height: 120px;
+`;
+
+const CartBuyInner = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: var(--margin-medium-large);
-    span {
-        color: var(--primary-100);
-        margin: 0 var(--margin-small);
-    }
+    padding: 2rem 4rem;
+    border-radius: 20px;
+    border: 3px solid var(--accent-200);
+    background-color: var(--white-100);
+    z-index: 999;
 `;
 
 export const CartQuantityPrice = styled(motion.div)`
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: var(--bg-200);
-    color: var(--text-200);
     border-radius: 10px;
-    padding: var(--padding-double-medium);
-    font-size: var(--font-size-medium);
+    font-size: 1.25rem;
     transform-origin: center left;
-    * {
-        margin: var(--margin-medium) 0;
+    & > p {
+        margin: 0.5rem 0;
+        span {
+            font-weight: 700;
+        }
     }
 `;
 
 export const CartBuyBtn = styled(motion.button)`
-    color: var(--bg-200);
-    background-color: var(--primary-100);
-    font-size: var(--font-size-medium);
-    padding: var(--padding-double-medium);
-    border-radius: 10px;
+    color: var(--accent-400);
+    background-color: var(--accent-100);
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     cursor: pointer;
     transform-origin: center left;
 `;
@@ -70,17 +79,17 @@ export default function CartBuy() {
     return (
         <CartBuyWrapper>
             {checkedCart.length > 0 && (
-                <>
+                <CartBuyInner>
                     <CartQuantityPrice
                         variants={buy_variants}
                         initial="initial"
                         animate="animate"
                     >
                         <p>
-                            全て : <span>{quantity}</span>コ
+                            数量 : <span>{quantity}</span>
                         </p>
                         <p>
-                            価格 : <span>{price.toLocaleString()}</span>円
+                            小計 : <span>{price.toLocaleString()}</span>円
                         </p>
                     </CartQuantityPrice>
                     <CartBuyBtn
@@ -91,7 +100,7 @@ export default function CartBuy() {
                     >
                         購入する
                     </CartBuyBtn>
-                </>
+                </CartBuyInner>
             )}
         </CartBuyWrapper>
     );

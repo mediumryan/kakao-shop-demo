@@ -22,12 +22,13 @@ const FooterContainer = styled.footer`
 
 export default function Footer() {
     return (
-        <FooterContainer>
-            This application has no commercial use, and was created for the
-            creator's own educational purposes. <br />
-            In addition, it is stated that the Kakao Commerce Intellectual
-            Property Rights Protection Center owns all trademark rights, design
-            rights, and copyrights of product images.
-        </FooterContainer>
+        <></>
+        // <FooterContainer>
+        //     This application has no commercial use, and was created for the
+        //     creator's own educational purposes. <br />
+        //     In addition, it is stated that the Kakao Commerce Intellectual
+        //     Property Rights Protection Center owns all trademark rights, design
+        //     rights, and copyrights of product images.
+        // </FooterContainer>
     );
 }

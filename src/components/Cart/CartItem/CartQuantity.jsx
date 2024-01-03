@@ -1,18 +1,30 @@
-import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
-import { cartState } from '../../atom';
+// import icons
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+// import state data
+import { cartState } from '../../../atom';
 
-const QuantityWrapper = styled.div`
-    width: 100%;
+const CartQuantityWrapper = styled.div`
+    flex-basis: 15%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
 `;
 
-const PlusMinus = styled.button`
-    font-size: var(--font-size-medium);
-    color: var(--primary-100);
+const PlusBtn = styled(FaPlusCircle)`
+    font-size: 1.5rem;
+    color: var(--accent-100);
+    transition: 300ms all;
+    &:hover {
+        transform: scale(1.05);
+        opacity: 0.75;
+    }
+`;
+const MinusBtn = styled(FaMinusCircle)`
+    font-size: 1.5rem;
+    color: var(--accent-100);
     transition: 300ms all;
     &:hover {
         transform: scale(1.05);
@@ -21,9 +33,10 @@ const PlusMinus = styled.button`
 `;
 
 const Quantity = styled.span`
-    font-size: var(--font-size-small);
-    font-weight: 800;
-    margin: 0 var(--margin-medium);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0.75rem;
+    cursor: default;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         margin: 0;
     }
@@ -53,14 +66,10 @@ export default function CartQuantity({ item, itemIndex }) {
         }
     };
     return (
-        <QuantityWrapper>
-            <PlusMinus onClick={minusCnt}>
-                <FaMinusCircle />
-            </PlusMinus>
+        <CartQuantityWrapper>
+            <MinusBtn onClick={minusCnt} />
             <Quantity>{item.quantity}</Quantity>
-            <PlusMinus onClick={plusCnt}>
-                <FaPlusCircle />
-            </PlusMinus>
-        </QuantityWrapper>
+            <PlusBtn onClick={plusCnt} />
+        </CartQuantityWrapper>
     );
 }
