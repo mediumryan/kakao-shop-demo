@@ -9,11 +9,12 @@ export const Container = styled.div`
     position: relative;
     margin-top: 5rem;
     padding: 2rem 10rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        padding: 2rem;
+        padding: 2rem 2rem 5rem 2rem;
     }
 `;
 
