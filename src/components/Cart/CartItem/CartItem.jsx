@@ -29,8 +29,11 @@ const CartName = styled.h4`
     letter-spacing: 2px;
     text-align: center;
     margin: 5rem 0 2rem 0;
+    color: var(--accent-100);
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         line-height: 1.2;
+        font-size: 1rem;
+        margin-top: 2.5rem;
     }
 `;
 
@@ -40,6 +43,11 @@ export const CartItemContents = styled.div`
         width: 200px;
         height: 200px;
         border-radius: 10px;
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            width: 75px;
+            height: 75px;
+            margin-left: 1rem;
+        }
     }
 `;
 
@@ -47,6 +55,9 @@ const CartPrice = styled.span`
     letter-spacing: 2px;
     font-weight: 800;
     font-size: 1.5rem;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        font-size: 1rem;
+    }
 `;
 
 const CartDelete = styled.button`
@@ -56,6 +67,9 @@ const CartDelete = styled.button`
     &:hover {
         transform: scale(1.15);
         color: var(--accent-100);
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        font-size: 1rem;
     }
 `;
 

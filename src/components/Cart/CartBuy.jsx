@@ -10,6 +10,10 @@ const CartBuyWrapper = styled(motion.div)`
     right: 2%;
     width: 480px;
     height: 120px;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 95%;
+        top: 15%;
+    }
 `;
 
 const CartBuyInner = styled.div`

@@ -11,6 +11,9 @@ const CartQuantityWrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-left: 2rem;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin-left: 1rem;
+    }
 `;
 
 const PlusBtn = styled(FaPlusCircle)`
@@ -21,6 +24,9 @@ const PlusBtn = styled(FaPlusCircle)`
         transform: scale(1.05);
         opacity: 0.75;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        font-size: 1rem;
+    }
 `;
 const MinusBtn = styled(FaMinusCircle)`
     font-size: 1.5rem;
@@ -30,6 +36,9 @@ const MinusBtn = styled(FaMinusCircle)`
         transform: scale(1.05);
         opacity: 0.75;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        font-size: 1rem;
+    }
 `;
 
 const Quantity = styled.span`
@@ -38,7 +47,8 @@ const Quantity = styled.span`
     margin: 0 0.75rem;
     cursor: default;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        margin: 0;
+        font-size: 1rem;
+        margin: 0 0.25rem;
     }
 `;
 
